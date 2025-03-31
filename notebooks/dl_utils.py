@@ -4,19 +4,19 @@ import os
 import tensorflow as tf
 
 
-def augment_brightness(images):
+def augment_brightness(images, max_delta=0.4):
     images = tf.map_fn(
-        lambda img: tf.image.random_brightness(img, max_delta=0.4), images
+        lambda img: tf.image.random_brightness(img, max_delta=max_delta), images
     )  # ±40% brightness
     return tf.clip_by_value(images, 0, 255)
 
 
-def augment_contrast(images):
+def augment_contrast(images, lower=0.6, upper=1.4):
     def adjust_contrast(img):
         img = tf.expand_dims(
             img, axis=-1
         )  # Restore channel dimension (H, W) → (H, W, 1)
-        img = tf.image.random_contrast(img, lower=0.6, upper=1.4)
+        img = tf.image.random_contrast(img, lower=lower, upper=upper)
         img = tf.squeeze(img, axis=-1)  # Remove channel dimension (H, W, 1) → (H, W)
         return tf.clip_by_value(img, 0, 255)
 
@@ -54,3 +54,11 @@ def extract_data(path):
                 y_array.append(folder)  # Label is the folder name
 
     return np.asarray(X_array), np.asarray(y_array)
+
+
+def preprocess(images, size, max_delta, lower, upper, stddev, noise_prob):
+    images = downsample_images(images, size)
+    images = augment_brightness(images, max_delta)
+    images = augment_contrast(images, lower, upper)
+    images = augment_gaussian_noise(images, stddev, noise_prob)
+    return images
