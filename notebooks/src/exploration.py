@@ -22,25 +22,26 @@ def get_indices_by_label(y):
     return indices_by_label
 
 def plot_first_images_by_label(X, y, num_images=5):
-    """Plot the first 'num_images' for each label."""
     indices_by_label = get_indices_by_label(y)
     unique_labels = np.unique(y)
-    
+
     n_labels = len(unique_labels)
     fig, axs = plt.subplots(n_labels, num_images, figsize=(15, 3 * n_labels))
-    
+
     for i, label in enumerate(unique_labels):
         indices = indices_by_label[label]
         for j in range(num_images):
-            # If there's only one label, axs might be 1D
             if n_labels > 1:
                 ax = axs[i, j]
             else:
                 ax = axs[j]
-            # Use modulo if there are fewer than num_images images
+            # Pick the j-th (modulo length) example of this label
             index = indices[j % len(indices)]
-            ax.imshow(X[index], cmap='gray')
-            ax.set_title(label)
+
+            image = X[index]
+
+            ax.imshow(image, cmap="gray")
+            ax.set_title(str(label))
             ax.axis('off')
     plt.tight_layout()
     plt.show()
