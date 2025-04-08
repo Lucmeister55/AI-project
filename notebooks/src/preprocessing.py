@@ -56,11 +56,11 @@ def get_image_generator(path, img_height, img_width, batch_size, shuffle=True, p
     if preprocess == True:
         image_gen = ImageDataGenerator(
             rescale=1./255,
-            rotation_range=45,
-            width_shift_range=0.15,
-            height_shift_range=0.15,
-            horizontal_flip=True,
-            zoom_range=0.5
+            # rotation_range=45,
+            # width_shift_range=0.15,
+            # height_shift_range=0.15,
+            # horizontal_flip=True,
+            # zoom_range=0.5
         )
     else:
         # For validation and testing, only rescale (or add any minimal preprocessing you need)
