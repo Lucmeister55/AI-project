@@ -7,7 +7,7 @@ dependencies:
   - numpy=2.0.2  
   - pip
   - pip:
-    - tensorflow>=2.18.0
+    - tensorflow[and-cuda]>=2.18.0
   - scikit-learn=1.6.1
   - pandas=2.2.3
   - matplotlib=3.10.0
