@@ -52,10 +52,15 @@ def augment_gaussian_noise(images, stddev=0.1, noise_prob=0.01):
     augmented = tf.clip_by_value(images + noise * mask, 0, 255)
     return augmented.numpy()
 
-def get_image_generator(path, img_height, img_width, batch_size, shuffle=True, preprocess=False):
+def get_image_generator(path, img_height, img_width, batch_size, norm = "fixed", shuffle=True, preprocess=False):
+    if norm == "fixed":
+        rescale = 1./255
+    else:
+        rescale = None
+    
     if preprocess == True:
         image_gen = ImageDataGenerator(
-            rescale=1./255,
+            rescale=rescale,
             # rotation_range=45,
             # width_shift_range=0.15,
             # height_shift_range=0.15,
@@ -64,7 +69,7 @@ def get_image_generator(path, img_height, img_width, batch_size, shuffle=True, p
         )
     else:
         # For validation and testing, only rescale (or add any minimal preprocessing you need)
-        image_gen = ImageDataGenerator(rescale=1./255)
+        image_gen = ImageDataGenerator(rescale=rescale)
 
     data_gen = image_gen.flow_from_directory(
         directory=path,
