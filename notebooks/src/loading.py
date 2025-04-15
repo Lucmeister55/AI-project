@@ -1,4 +1,5 @@
 import numpy as np
+import pathlib
 
 
 # Function to convert data from a generator into NumPy arrays.
@@ -19,3 +20,12 @@ def generator_to_array(generator):
     labels = np.array([generator.class_names[int(label)] for label in y])
 
     return X, y, labels
+
+
+def count_files(directory) -> int:
+    base_path = pathlib.Path(directory)
+    total = 0
+    for subdir in base_path.iterdir():
+        if subdir.is_dir():
+            total += sum(1 for _ in subdir.iterdir() if _.is_file())
+    return total
