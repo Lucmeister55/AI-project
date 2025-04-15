@@ -2,24 +2,28 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
 def print_dataset_size(X, y):
-    print(f"Train shape: {X.shape}, Labels: {y.shape}")
+    print(f"Input shape: {X.shape}, Output shape: {y.shape}")
+
 
 def check_image_shape_consistency(X):
     consistent = all(img.shape == X[0].shape for img in X)
-    print("All images have the same shape:", consistent)
-    return consistent
+    print("All images are of the same size:", consistent)
+
 
 def plot_label_distribution(y):
-    plt.figure(figsize=(8,6))
+    plt.figure(figsize=(8, 6))
     sns.countplot(x=y, hue=y)
     plt.title("Label Distribution")
     plt.show()
+
 
 def get_indices_by_label(y):
     unique_labels = np.unique(y)
     indices_by_label = {label: np.where(y == label)[0] for label in unique_labels}
     return indices_by_label
+
 
 def plot_first_images_by_label(X, y, num_images=5):
     indices_by_label = get_indices_by_label(y)
@@ -42,9 +46,10 @@ def plot_first_images_by_label(X, y, num_images=5):
 
             ax.imshow(image, cmap="gray")
             ax.set_title(str(label))
-            ax.axis('off')
+            ax.axis("off")
     plt.tight_layout()
     plt.show()
+
 
 def display_pixel_statistics(X):
     # Compute per-pixel statistics (across the dataset)
@@ -52,24 +57,27 @@ def display_pixel_statistics(X):
     global_average = np.mean(X)
     pixel_std_dev = np.std(X, axis=0)
     global_std_dev = np.std(X)
-    
+
     # Plot the computed statistics
     plt.figure(figsize=(10, 10))
-    
+
     plt.subplot(1, 2, 1)
     plt.xticks([])
     plt.yticks([])
     plt.imshow(pixel_average, cmap="gray")
+    plt.title("Visualization of pixel averages")
     plt.xlabel(f"Global average: {global_average:.2f}")
-    
+
     plt.subplot(1, 2, 2)
     plt.xticks([])
     plt.yticks([])
     plt.imshow(pixel_std_dev, cmap="gray")
-    plt.xlabel(f"Global std dev: {global_std_dev:.2f}")
-    
+    plt.title("Visualization of pixel standard deviations")
+    plt.xlabel(f"Global standard deviation: {global_std_dev:.2f}")
+
     plt.tight_layout()
     plt.show()
+
 
 def run_all_exploration(X, y):
     print_dataset_size(X, y)
