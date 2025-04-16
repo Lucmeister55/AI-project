@@ -3,30 +3,30 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-def print_dataset_size(X, y):
+def _print_dataset_size(X, y):
     print(f"Input shape: {X.shape}, Output shape: {y.shape}")
 
 
-def check_image_shape_consistency(X):
+def _check_image_shape_consistency(X):
     consistent = all(img.shape == X[0].shape for img in X)
     print("All images are of the same size:", consistent)
 
 
-def plot_label_distribution(y):
+def _plot_label_distribution(y):
     plt.figure(figsize=(8, 6))
     sns.countplot(x=y, hue=y)
     plt.title("Label Distribution")
     plt.show()
 
 
-def get_indices_by_label(y):
+def _get_indices_by_label(y):
     unique_labels = np.unique(y)
     indices_by_label = {label: np.where(y == label)[0] for label in unique_labels}
     return indices_by_label
 
 
-def plot_first_images_by_label(X, y, num_images=5):
-    indices_by_label = get_indices_by_label(y)
+def _plot_first_images_by_label(X, y, num_images=5):
+    indices_by_label = _get_indices_by_label(y)
     unique_labels = np.unique(y)
 
     n_labels = len(unique_labels)
@@ -51,7 +51,7 @@ def plot_first_images_by_label(X, y, num_images=5):
     plt.show()
 
 
-def display_pixel_statistics(X):
+def _display_pixel_statistics(X):
     # Compute per-pixel statistics (across the dataset)
     pixel_average = np.mean(X, axis=0)
     global_average = np.mean(X)
@@ -80,8 +80,8 @@ def display_pixel_statistics(X):
 
 
 def run_all_exploration(X, y):
-    print_dataset_size(X, y)
-    check_image_shape_consistency(X)
-    plot_label_distribution(y)
-    plot_first_images_by_label(X, y, num_images=5)
-    display_pixel_statistics(X)
+    _print_dataset_size(X, y)
+    _check_image_shape_consistency(X)
+    _plot_label_distribution(y)
+    _plot_first_images_by_label(X, y, num_images=5)
+    _display_pixel_statistics(X)
