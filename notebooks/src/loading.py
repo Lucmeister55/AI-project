@@ -1,6 +1,7 @@
 import numpy as np
-import tensorflow as tf
 import pathlib
+import tensorflow as tf
+
 import src.preprocessing as preprocessing
 
 
@@ -40,14 +41,16 @@ def _extract_classes(data_gen):
     return np.array(all_labels)
 
 
-def get_images(path, img_height, img_width, batch_size, norm=None):
+def get_images(
+    path, img_height, img_width, batch_size, norm=None, color_mode="grayscale"
+):
     train_data_gen = tf.keras.utils.image_dataset_from_directory(
         directory=path + "/train",
         label_mode="binary",
         batch_size=batch_size,
         image_size=(img_height, img_width),
         shuffle=True,
-        color_mode="grayscale",
+        color_mode=color_mode,
     )
     val_data_gen = tf.keras.utils.image_dataset_from_directory(
         directory=path + "/val",
@@ -55,7 +58,7 @@ def get_images(path, img_height, img_width, batch_size, norm=None):
         batch_size=batch_size,
         image_size=(img_height, img_width),
         shuffle=False,
-        color_mode="grayscale",
+        color_mode=color_mode,
     )
     train_and_val_data_gen = tf.keras.utils.image_dataset_from_directory(
         directory=path + "/train_and_val",
@@ -63,7 +66,7 @@ def get_images(path, img_height, img_width, batch_size, norm=None):
         batch_size=batch_size,
         image_size=(img_height, img_width),
         shuffle=True,
-        color_mode="grayscale",
+        color_mode=color_mode,
     )
     test_data_gen = tf.keras.utils.image_dataset_from_directory(
         directory=path + "/test",
@@ -71,7 +74,7 @@ def get_images(path, img_height, img_width, batch_size, norm=None):
         batch_size=batch_size,
         image_size=(img_height, img_width),
         shuffle=False,
-        color_mode="grayscale",
+        color_mode=color_mode,
     )
 
     if norm is not None:
