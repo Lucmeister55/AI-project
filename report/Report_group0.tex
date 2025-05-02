@@ -31,15 +31,6 @@
 \section{Introduction}
 Adds context to your project (referencing the material in your bibliography is important~\cite{b1, b2}) and presents the content of the following sections (starting with Section~\ref{sec:task_1}).
 
-
-\section{Task 1: Data Exploration, Pre-Processing and Augmentation}\label{sec:task_1}
-You can freely organize the sections about the tasks. The given structure is purely a suggestion.
-
-
-\subsection{Subsection 1 (e.g. Methods)}
- Details the strategies you have employed, including those that did not work.
-
-\subsection{Subsection 2 (e.g. Results)}
 Includes tables with quantitative results (Table~\ref{table:example}) and images (Fig.~\ref{fig:example}) from your project while carefully explaining their meaning and how you produced them.
 \begin{table}[htbp]
 \caption{Table Type Styles}
@@ -59,12 +50,62 @@ copy& More table copy$^{\mathrm{a}}$& &  \\
 \end{table}
 
 \begin{figure}[htbp]
-\centerline{\includegraphics{fig1.png}}
+\centerline{\includegraphics{Images/fig1.png}}
 \caption{Example of a figure caption.}
 \label{fig:example}
 \end{figure}
-\subsection{Subsection 3 (e.g. Discussion)}
-Discusses the results and your general experience with the project, as well as provide answers to the questions about the task.
+
+\section{Task 1: Data Exploration, Pre-Processing and Augmentation}\label{sec:task_1}
+
+\subsection{Loading the data}
+The grayscale chest X-ray images are loaded at their original resolution of 299 × 299 pixels. The labels, either COVID or NORMAL, are taken from the folder names containing the images and assumed to be accurate. From the outset, the dataset was pre-divided into training (1,600 images), validation (400 images), and test (200 images) sets. This original distribution is preserved for the exercise, with an additional combined training and validation set comprising 2,000 images.
+
+\subsection{Data exploration}
+Exploration consists of checking the shape of the data, evaluating the distribution of the two classes, plotting a few examples and checking pixel and global average and standard deviation. This is replicated for training, validation and test datasets and serves as an initial look at the data and to possibly detect problems at an early stage in the project.
+All the images in the training dataset are of the same size and there are an equal amount in both classes, which is good. A few labeled examples are given in figure \ref{fig:example_images}.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\linewidth]{Images/example_images.png}}
+\caption{A few images from the training dataset with accompanying labels.}
+\label{fig:example_images}
+\end{figure}
+
+There seem to be no clear differences between the NORMAL and COVID images. However, the limitation to grayscale images, low contrasts, different zoom levels and slight variations in angles could be problems for classification. Also if there are, to us unrecognisable, artifacts in mostly one category, generalization to new images could be problematic.
+Over all images in the training dataset the average value and the standard deviation at every pixel location can be visualized to show a sort of average image and a heatmap for variation. These visualizations, together with the average and standard deviation of all pixels, are given in figure \ref{fig:pixel_statistics}.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\linewidth]{Images/pixel_statistics.png}}
+\caption{A visualization of the average image (left) and a variation heatmap (right) with accompanying global statistics from the training dataset.}
+\label{fig:pixel_statistics}
+\end{figure}
+
+Replicating all this for the validation and test datasets give very comparable results, indicating that the images were uniformly divided over the different sets. The exploration of the validation and test sets can be consulted in the notebook.
+
+\subsection{Pre-processing}
+Next, some pre-processing steps are implemented and evaluated, namely down sampling to 128 x 128 pixels using bilinear interpolation and a few normalization strategies. The result of down sampling, given in figure \ref{fig:downsample}, is still recognisable to the human eye. As such, it is assumed that the model still gets enough information from this. Implementing this down sampling strategy should reduce training time while not losing too much performance.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\linewidth]{Images/downsample.png}}
+\caption{An example of a downsampled image using bilinear interpolation (299x299 -> 128x128).}
+\label{fig:downsample}
+\end{figure}
+
+Normalization through the use of a fixed value (dividing by 255), sample statistics (subtracting the overall mean and dividing by the overall standard deviation of the current sample (training, validation or test)) and statistics of the training dataset (subtracting the overall mean and dividing by the overall standard deviation of the training dataset) were tried out. All of these strategies resulted in visually the same image but with pixel values with a far lower magnitude. However, normalizing using training set-wide image statistics (mean and std) and applying the same normalization across all images is the most correct method as it causes no data leakage. Normalization based on the training dataset will thus be used in the project.  
+
+\subsection{Augmentation}
+Finally, based on the variety of the plotted images a few augmentation strategies are implemented, namely randomly altering the brightness and the contrast by a factor between 0.6 and 1.4 and randomly rotating the images (anti)clockwise up to 30°. Examples of these augmentation are given in figure \ref{fig:augmentation}.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=\linewidth]{Images/augmentation.png}}
+\caption{Examples of different transformations as well as the combination of them together.}
+\label{fig:augmentation}
+\end{figure}
+
+Augmentation should only result in images that could occur in test/unseen data. Based on the data we have, intense augmentation doesn't seem al that necessary. It will thus only be considered if necessary.
+
+\subsection{Pipeline}
+A pipeline consisting of loading the images correctly, with optional downsampling, followed by optional normalization using the training dataset is implemented for later use. Data augmentations can be used as layers in the models if necessary.
+
 \section{Task 2: Building the baseline model}
 \section{Task 3: Transfer Learning}
 \section{Task 4: Explainability through Grad-CAM}
