@@ -1,5 +1,5 @@
 import tensorflow as tf
-from tensorflow.keras.layers import Dense, Conv2D, Flatten, Dropout, MaxPooling2D, Input
+from tensorflow.keras.layers import Dense, Conv2D, Flatten, Dropout, MaxPooling2D, Input, RandomBrightness, RandomContrast, RandomRotation, GlobalAveragePooling2D, Input, BatchNormalization, RandomZoom
 from tensorflow.keras.models import Sequential
 
 
@@ -30,13 +30,28 @@ def custom_CNN(img_shape, dropout_rate, filters, dense_unit, lr, metrics):
     return model
 
 
+
 def transfer_model(base_model, dropout_rate, dense_unit, lr, metrics):
+
+    # Define augmentation pipeline
+    augmentation = Sequential([
+        RandomBrightness(factor=0.1),
+        RandomContrast(factor=0.1),
+        RandomRotation((-0.040, 0.040)),
+    ], name="augmentation")
+
+
     model = Sequential(
         [
-            base_model,
+            Input(shape=(128, 128, 3)),
+            augmentation,
+            base_model, 
             Dropout(dropout_rate),
-            Flatten(),
+            GlobalAveragePooling2D(),
             Dense(dense_unit, activation="relu"),
+            Dropout(dropout_rate),
+            Dense(dense_unit, activation="relu"),
+            Dropout(dropout_rate),
             Dense(1, activation="sigmoid"),
         ]
     )
@@ -48,3 +63,4 @@ def transfer_model(base_model, dropout_rate, dense_unit, lr, metrics):
     )
 
     return model
+
