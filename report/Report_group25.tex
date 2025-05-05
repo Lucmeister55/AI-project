@@ -260,13 +260,71 @@ Overall, the baseline CNN provides a solid starting point;
 \section{Task 3: Transfer Learning}
 Here we will apply transfer learning by using a pre-trained ResNet50V2 model trained on Imagenet. This model has been trained on a large dataset images. We will use this model as a starting point for our own model. Transfer learning is a powerful machine learning technique for leveraging knowledge learned
 from one task and applying it to a new task. This is especially useful when you have limited training data. \\
-\hline
+
 The typical workflow for transfer learning is as follows: \\
 1.Starting with a pretrained model\\
 2.Freeze the layers of the pretrained model\\
 3.Add new trainablelayers to the pretrained model\\
 4.Training on the dataset\\
 5.Fine-tuning (optional)\\
+
+We freeze the layers of the pretrained model to prevent information learned from the initial task from being overwritten during the new training process.Then new layers are added to the pretrained model to adapt it to the new task. And then we train the model and fine-tune it.\\
+
+\subsection{Setup the base model}
+We instantiate the base model with the "imagenet" pre-trained weights. We do not include the top layers. The model is ResNet50V2. We freeze al the layers of the base model so they are not updated during the training process.\\
+
+New layers are added to the model. \textcolor{red}{explain layers.}\\
+
+Finally a dropout layer is added before the new layers.
+The Adam optimizer is used with a learning rate of .. and the loss function is binary cross-entropy.
+Now we compile the model. \\
+
+\centerline{\textcolor{red}{print summary of model.}}\\
+\\
+We also have a augmentation layer. We use RandomBrightness, RandomContrast and RandomRotation to augment the images.\\
+
+\subsection{Train the model}
+
+We train the model using the best hyperparameters found while optimizing the
+baseline. We use the training and validation data together as training data\\
+
+\centerline{\textcolor{red}{best Hyperparameter}}\\
+
+Here are the plots we get from training the model for trainingset and the validationset\\
+
+\centerline{\textcolor{red}{plot for trainingset}}\\
+\centerline{\textcolor{red}{plot for validationset}}\\
+
+#####conclusion######
+
+
+\subsection{Hyperparameter tuning}
+Now we implement the EarlyStopping callback. While tuning a few parameters. We tune batch_size, learning_rate and dropout_rate. We do this by conducting a rough parameter search.\\
+
+After the parameter search, we fine-tune the entire model using the the best hyperparameters we found. Which are\\
+\centerline{\textcolor{red}{best Hyperparameter}}\\
+
+\subsection{Train pre-trained model}
+Now we train the model using the best hyperparameters found while fine-tuning.\\
+By doing this we get the following plots which represent the training accuracy and loss for the pre-trained model over ... epochs.\\
+
+\subsection{Fine-tuning the entire model}
+In this step all of the base model layers are unfrozen. The whole model is retrained end to end. We also use the training and validation data together as training data\\
+
+We display the confusion matrix. \\
+
+\centerline{\textcolor{red}{confusion matrix}}\\
+
+Finally a few images are plotted from the test dataset. First without pre-processing, second with their evaluations after pre-processing.\\
+
+\centerline{\textcolor{red}{example images}}\\	
+
+
+
+
+
+
+
 
 \section{Task 4: Explainability through Grad-CAM}
 \section{Conclusions}

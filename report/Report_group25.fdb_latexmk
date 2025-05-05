@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1746460571.62825 "c:/Users/wille/AI-project/report/Report_group25.tex" "Report_group25.pdf" "Report_group25" 1746460574.70855 2
+["pdflatex"] 1746465268.81856 "c:/Users/wille/AI-project/report/Report_group25.tex" "Report_group25.pdf" "Report_group25" 1746465270.9054 2
   "C:/Users/wille/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1746456525 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/wille/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1746456478 13157640 8e4f70c43cce1d8c21f2a198c86929df ""
   "C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -39,6 +39,7 @@
   "C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb" 1247596667 32007 e8fa0078355f39467039935974716569 ""
   "C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1247596667 36281 c355509802a035cadc5f15869451dcee ""
   "C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1247596667 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
@@ -105,9 +106,9 @@
   "Images/example_images.png" 1746380094 341294 895375a2448ac713c496168ec6416623 ""
   "Images/fig1.png" 1746380094 4535 0e284ca354e1b5c77378d3dfdb543874 ""
   "Images/pixel_statistics.png" 1746380094 141800 e5ffcda509327f681396ad8b90f3c850 ""
-  "Report_group25.aux" 1746460574 4906 ac8e49012afe46d711260d681c346506 "pdflatex"
-  "Report_group25.tex" 1746460475 16266 13632c3a98ee16923f83a1bc6c6bce7b ""
-  "c:/Users/wille/AI-project/report/Report_group25.tex" 1746460475 16266 13632c3a98ee16923f83a1bc6c6bce7b ""
+  "Report_group25.aux" 1746465270 5528 bb729cc3c485cdf952b0e6e3c715a6d6 "pdflatex"
+  "Report_group25.tex" 1746465267 18895 5503d082703313a323e877ab3f379362 ""
+  "c:/Users/wille/AI-project/report/Report_group25.tex" 1746465267 18895 5503d082703313a323e877ab3f379362 ""
   (generated)
   "Report_group25.aux"
   "Report_group25.log"

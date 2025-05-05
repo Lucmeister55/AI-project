@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.5)  5 MAY 2025 17:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.5)  5 MAY 2025 19:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -438,14 +438,6 @@ LaTeX Warning: Reference `fig:conf_matrix' on page 3 undefined on input line 242
 
 LaTeX Warning: Reference `fig:baseline_curves' on page 3 undefined on input line 253.
 
-c:/Users/wille/AI-project/report/Report_group25.tex:263: Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
-l.263 \hline
-            
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 261--263
 
@@ -453,115 +445,307 @@ Underfull \hbox (badness 10000) in paragraph at lines 261--263
 
 
 
-c:/Users/wille/AI-project/report/Report_group25.tex:263: You can't use `\hrule' here except with leaders.
-\@outputdblcol ...hss }\hfil {\normalcolor \vrule 
-                                                  \@width \columnseprule }\h...
-l.263 \hline
-            
-To put a horizontal rule in an hbox or an alignment,
-you should use \leaders or \hrulefill (see The TeXbook).
-
-c:/Users/wille/AI-project/report/Report_group25.tex:263: Missing number, treated as zero.
-<to be read again> 
-                   }
-l.263 \hline
-            
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-c:/Users/wille/AI-project/report/Report_group25.tex:263: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.263 \hline
-            
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-Overfull \hbox (12.99973pt too wide) has occurred while \output is active
-[] []\OT1/ptm/m/n/10 height[] []
- []
-
-c:/Users/wille/AI-project/report/Report_group25.tex:263: You can't use `\hrule' here except with leaders.
-\size@update ...p \setbox \strutbox \hbox {\vrule 
-                                                  \@height .7\baselineskip \...
-l.263 \hline
-            
-To put a horizontal rule in an hbox or an alignment,
-you should use \leaders or \hrulefill (see The TeXbook).
-
-c:/Users/wille/AI-project/report/Report_group25.tex:263: Missing number, treated as zero.
-<to be read again> 
-                   d
-l.263 \hline
-            
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-c:/Users/wille/AI-project/report/Report_group25.tex:263: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   d
-l.263 \hline
-            
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-c:/Users/wille/AI-project/report/Report_group25.tex:263: Missing number, treated as zero.
-<to be read again> 
-                   h
-l.263 \hline
-            
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-c:/Users/wille/AI-project/report/Report_group25.tex:263: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   h
-l.263 \hline
-            
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-c:/Users/wille/AI-project/report/Report_group25.tex:263: Missing number, treated as zero.
-<to be read again> 
-                   }
-l.263 \hline
-            
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-c:/Users/wille/AI-project/report/Report_group25.tex:263: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.263 \hline
-            
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
 [3 <./Images/baseline_curves.png> <./Images/confusion_matrix_baseline.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 264--270
 
  []
+
+
+Underfull \hbox (badness 4765) in paragraph at lines 271--272
+\OT1/ptm/m/n/10 in-for-ma-tion learned from the ini-tial task from be-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
+
+ []
+
+
+Underfull \hbox (badness 3039) in paragraph at lines 274--275
+[]\OT1/ptm/m/n/10 We in-stan-ti-ate the base model with the "im-a-genet"
+ []
+
+
+Underfull \hbox (badness 1533) in paragraph at lines 274--275
+\OT1/ptm/m/n/10 pre-trained weights. We do not in-clude the top lay-ers.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--281
+
+ []
+
+
+c:/Users/wille/AI-project/report/Report_group25.tex:283: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.283 \\
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+c:/Users/wille/AI-project/report/Report_group25.tex:284: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.284 W
+       e also have a augmentation layer. We use RandomBrightness, RandomCont...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+[]\OT1/ptm/m/n/10 We also have a aug-men-ta-tion layer. We use
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--290
+
+ []
+
+
+c:/Users/wille/AI-project/report/Report_group25.tex:292: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.292 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
+
+ []
+
+
+c:/Users/wille/AI-project/report/Report_group25.tex:296: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.296 \centerline
+                 {\textcolor{red}{plot for validationset}}\\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+c:/Users/wille/AI-project/report/Report_group25.tex:297: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.297 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+c:/Users/wille/AI-project/report/Report_group25.tex:298: You can't use `macro parameter character #' in vertical mode.
+l.298 #
+       ####conclusion######
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/wille/AI-project/report/Report_group25.tex:298: You can't use `macro parameter character #' in vertical mode.
+l.298 ##
+        ###conclusion######
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/wille/AI-project/report/Report_group25.tex:298: You can't use `macro parameter character #' in vertical mode.
+l.298 ###
+         ##conclusion######
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/wille/AI-project/report/Report_group25.tex:298: You can't use `macro parameter character #' in vertical mode.
+l.298 ####
+          #conclusion######
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/wille/AI-project/report/Report_group25.tex:298: You can't use `macro parameter character #' in vertical mode.
+l.298 #####
+           conclusion######
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/wille/AI-project/report/Report_group25.tex:298: You can't use `macro parameter character #' in horizontal mode.
+l.298 #####conclusion#
+                      #####
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/wille/AI-project/report/Report_group25.tex:298: You can't use `macro parameter character #' in horizontal mode.
+l.298 #####conclusion##
+                       ####
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/wille/AI-project/report/Report_group25.tex:298: You can't use `macro parameter character #' in horizontal mode.
+l.298 #####conclusion###
+                        ###
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/wille/AI-project/report/Report_group25.tex:298: You can't use `macro parameter character #' in horizontal mode.
+l.298 #####conclusion####
+                         ##
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/wille/AI-project/report/Report_group25.tex:298: You can't use `macro parameter character #' in horizontal mode.
+l.298 #####conclusion#####
+                          #
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/wille/AI-project/report/Report_group25.tex:298: You can't use `macro parameter character #' in horizontal mode.
+l.298 #####conclusion######
+                           
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/wille/AI-project/report/Report_group25.tex:302: Missing $ inserted.
+<inserted text> 
+                $
+l.302 ...e tuning a few parameters. We tune batch_
+                                                  size, learning_rate and dr...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+c:/Users/wille/AI-project/report/Report_group25.tex:303: Missing $ inserted.
+<inserted text> 
+                $
+l.303 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
+[]\OT1/ptm/m/n/10 Now we im-ple-ment the EarlyStop-ping call-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
+\OT1/ptm/m/n/10 back. While tun-ing a few pa-ram-e-ters. We tune
+ []
+
+
+Overfull \hbox (130.92146pt too wide) in paragraph at lines 302--303
+\OT1/ptm/m/n/10 batch$[]\OML/cmm/m/it/10 ize; learning[]ateanddropout[]ate:Wedothisbyconductingaroughparametersearch:[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
+
+ []
+
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--310
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
+
+ []
+
+
+c:/Users/wille/AI-project/report/Report_group25.tex:317: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.317 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+
+ []
+
+
+c:/Users/wille/AI-project/report/Report_group25.tex:321: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.321 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 
 ** Conference Paper **
@@ -576,11 +760,7 @@ Before submitting the final camera ready copy, remember to:
 
 
 
-
-
-[4
-
-] (Report_group25.aux)
+[4] (Report_group25.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-14>
@@ -601,10 +781,10 @@ Here is how much of TeX's memory you used:
  670418 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,13n,93p,820b,354s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Report_group25.pdf (4 pages, 1655008 bytes).
+<C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Report_group25.pdf (4 pages, 1670270 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
+ 94 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
