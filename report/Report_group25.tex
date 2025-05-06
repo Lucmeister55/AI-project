@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{comment}
 \usepackage[table]{xcolor}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
@@ -31,36 +32,39 @@
 
 
 \section{Introduction}
-Adds context to your project (referencing the material in your bibliography is important~\cite{b1, b2}) and presents the content of the following sections (starting with Section~\ref{sec:task_1}).
 
-Includes tables with quantitative results (Table~\ref{table:example}) and images (Fig.~\ref{fig:example}) from your project while carefully explaining their meaning and how you produced them.
-\begin{table}[htbp]
-\caption{Table Type Styles}
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Table}&\multicolumn{3}{|c|}{\textbf{Table Column Head}} \\
-\cline{2-4} 
-\textbf{Head} & \textbf{\textit{Table column subhead}}& \textbf{\textit{Subhead}}& \textbf{\textit{Subhead}} \\
-\hline
-copy& More table copy$^{\mathrm{a}}$& &  \\
-\hline
-\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
-\end{tabular}
-\label{table:example}
-\end{center}
-\end{table}
+\begin{comment}
+	Adds context to your project (referencing the material in your bibliography is important~\cite{b1, b2}) and presents the content of the following sections (starting with Section~\ref{sec:task_1}).
+	
+	Includes tables with quantitative results (Table~\ref{table:example}) and images (Fig.~\ref{fig:example}) from your project while carefully explaining their meaning and how you produced them.
+	\begin{table}[htbp]
+	\caption{Table Type Styles}
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+	\hline
+	\textbf{Table}&\multicolumn{3}{|c|}{\textbf{Table Column Head}} \\
+	\cline{2-4} 
+	\textbf{Head} & \textbf{\textit{Table column subhead}}& \textbf{\textit{Subhead}}& \textbf{\textit{Subhead}} \\
+	\hline
+	copy& More table copy$^{\mathrm{a}}$& &  \\
+	\hline
+	\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+	\end{tabular}
+	\label{table:example}
+	\end{center}
+	\end{table}
+	
+	\begin{figure}[htbp]
+	\centerline{\includegraphics{Images/fig1.png}}
+	\caption{Example of a figure caption.}
+	\label{fig:example}
+	\end{figure}
+\end{comment}
 
-\begin{figure}[htbp]
-\centerline{\includegraphics{Images/fig1.png}}
-\caption{Example of a figure caption.}
-\label{fig:example}
-\end{figure}
 
+The outbreak of the COVID-19 pandemic in late 2019 has placed unprecedented strain on healthcare systems worldwide, highlighting the urgent need for rapid and accurate diagnostic tools to support clinical decision–making. Chest X‑ray imaging has emerged as a widely available modality for the preliminary screening of COVID‑19 pneumonia, yet visual assessment alone can be time‑consuming and prone to inter‑observer variability~\cite{b1,b2}. In this work, we present a deep learning–based framework for assisted diagnosis of COVID‑19 from chest X‑ray images, leveraging both custom convolutional neural networks and transfer learning approaches.
 
-
-
-
+We begin in Section~\ref{sec:task_1} by exploring the publicly available dataset, detailing our preprocessing pipeline—downsampling, normalization, and light augmentation—and presenting initial sample images (Fig.~\ref{fig:example_images}). In Section~\ref{sec:task_2}, we build and evaluate a baseline CNN model, reporting its architecture (Table~\ref{table:cnn_overview}), learning curves (Fig.~\ref{fig:baseline_curves}), and test‑set performance including a confusion matrix (Fig.~\ref{fig:conf_matrix}). Section~\ref{sec:task_3} introduces transfer learning with a pre‑trained ResNet50V2 backbone, describing model adaptations, hyperparameter tuning, and comparative results. Finally, Section~\ref{sec:task_4} demonstrates model interpretability using Grad‑CAM heatmaps, and Section~\ref{sec:conclusions} summarizes our conclusions and outlines potential future work.
 
 \section{Task 1: Data Exploration, Pre-Processing and Augmentation}\label{sec:task_1}
 
@@ -69,7 +73,7 @@ The grayscale chest X-ray images are loaded at their original resolution of 299 
 
 \subsection{Data exploration}
 Exploration consists of checking the shape of the data, evaluating the distribution of the two classes, plotting a few examples and checking pixel and global average and standard deviation. This is replicated for training, validation and test datasets and serves as an initial look at the data and to possibly detect problems at an early stage in the project.
-All the images in the training dataset are of the same size and there are an equal amount in both classes, which is good. A few labeled examples are given in figure \ref{fig:example_images}.
+All the images in the training dataset are of the same size and there are an equal amount in both classes, which is good. A few labeled examples are given in Fig.~\ref{fig:example_images}.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\linewidth]{Images/example_images.png}}
@@ -78,7 +82,7 @@ All the images in the training dataset are of the same size and there are an equ
 \end{figure}
 
 There seem to be no clear differences between the NORMAL and COVID images. However, the limitation to grayscale images, low contrasts, different zoom levels and slight variations in angles could be problems for classification. Also if there are, to us unrecognisable, artifacts in mostly one category, generalization to new images could be problematic.
-Over all images in the training dataset the average value and the standard deviation at every pixel location can be visualized to show a sort of average image and a heatmap for variation. These visualizations, together with the average and standard deviation of all pixels, are given in figure \ref{fig:pixel_statistics}.
+Over all images in the training dataset the average value and the standard deviation at every pixel location can be visualized to show a sort of average image and a heatmap for variation. These visualizations, together with the average and standard deviation of all pixels, are given in Fig.~\ref{fig:pixel_statistics}.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\linewidth]{Images/pixel_statistics.png}}
@@ -89,7 +93,7 @@ Over all images in the training dataset the average value and the standard devia
 Replicating all this for the validation and test datasets give very comparable results, indicating that the images were uniformly divided over the different sets. The exploration of the validation and test sets can be consulted in the notebook.
 
 \subsection{Pre-processing}
-Next, some pre-processing steps are implemented and evaluated, namely down sampling to 128 x 128 pixels using bilinear interpolation and a few normalization strategies. The result of down sampling, given in figure \ref{fig:downsample}, is still recognisable to the human eye. As such, it is assumed that the model still gets enough information from this. Implementing this down sampling strategy should reduce training time while not losing too much performance.
+Next, some pre-processing steps are implemented and evaluated, namely down sampling to 128 x 128 pixels using bilinear interpolation and a few normalization strategies. The result of down sampling, given in Fig.~\ref{fig:downsample}, is still recognisable to the human eye. As such, it is assumed that the model still gets enough information from this. Implementing this down sampling strategy should reduce training time while not losing too much performance.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\linewidth]{Images/downsample.png}}
@@ -100,7 +104,7 @@ Next, some pre-processing steps are implemented and evaluated, namely down sampl
 Normalization through the use of a fixed value (dividing by 255), sample statistics (subtracting the overall mean and dividing by the overall standard deviation of the current sample (training, validation or test)) and statistics of the training dataset (subtracting the overall mean and dividing by the overall standard deviation of the training dataset) were tried out. All of these strategies resulted in visually the same image but with pixel values with a far lower magnitude. However, normalizing using training set-wide image statistics (mean and std) and applying the same normalization across all images is the most correct method as it causes no data leakage. Normalization based on the training dataset will thus be used in the project.  
 
 \subsection{Augmentation}
-Finally, based on the variety of the plotted images a few augmentation strategies are implemented, namely randomly altering the brightness and the contrast by a factor between 0.6 and 1.4 and randomly rotating the images (anti)clockwise up to 30°. Examples of these augmentation are given in figure \ref{fig:augmentation}.
+Finally, based on the variety of the plotted images a few augmentation strategies are implemented, namely randomly altering the brightness and the contrast by a factor between 0.6 and 1.4 and randomly rotating the images (anti)clockwise up to 30°. Examples of these augmentation are given in Fig.~\ref{fig:augmentation}.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\linewidth]{Images/augmentation.png}}
@@ -120,7 +124,7 @@ A pipeline consisting of loading the images correctly, with optional downsamplin
 
 
 
-\section{Task 2: Building the Baseline Model}
+\section{Task 2: Building the Baseline Model}\label{sec:task_2}
 
 This section describes the construction, training, and evaluation of our initial convolutional neural network (CNN) model for COVID-19 detection from chest X-ray images. We start by outlining the model architecture, proceed to training hyperparameters and procedures, and conclude with performance analysis on the validation and test sets.
 
@@ -172,7 +176,7 @@ Training was conducted with the following settings:
 	\item Data generators: real-time data augmentation including random rotations (up to $30^\circ$), brightness and contrast adjustments in [0.6, 1.4]
 \end{itemize}
 
-The learning curves are depicted in Figure~\ref{fig:baseline_curves}.
+The learning curves are depicted in Fig.~\ref{fig:baseline_curves}.
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=\linewidth]{Images/baseline_curves.png}}
@@ -230,7 +234,7 @@ Using the best hyperparameters, the model was retrained on the full training set
 	\item Test loss: 0.2772
 \end{itemize}
 
-The confusion matrix is shown in Figure~\ref{fig:conf_matrix}.
+The confusion matrix is shown in Fig.~\ref{fig:conf_matrix}.
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=0.7\linewidth]{Images/confusion_matrix_baseline.png}}
@@ -239,7 +243,7 @@ The confusion matrix is shown in Figure~\ref{fig:conf_matrix}.
 \end{figure}
 
 \subsection{Discussion}
-The baseline model achieved 89\% accuracy, demonstrating strong discriminative power between COVID-19 and normal chest X-ray images. From the confusion matrix (Fig.\ref{fig:conf_matrix}), we observe:
+The baseline model achieved 89\% accuracy, demonstrating strong discriminative power between COVID-19 and normal chest X-ray images. From the confusion matrix (Fig.~\ref{fig:conf_matrix}), we observe:
 
 \begin{itemize}
 	\item True negatives (NORMAL correctly classified): 85
@@ -250,14 +254,14 @@ The baseline model achieved 89\% accuracy, demonstrating strong discriminative p
 
 This yields a sensitivity (recall for COVID) of $93/(93+7)=0.93$ and a specificity of $85/(85+15)=0.85$. The slightly higher sensitivity indicates the model is more likely to correctly detect COVID cases, at the cost of some false alarms.  
 
-Training curves in Fig.\ref{fig:baseline_curves} show rapid convergence of training accuracy to near 100\% within the first 10 epochs, while validation accuracy plateaus around 88\%, suggesting some overfitting that was controlled via dropout and early stopping.  
+Training curves in Fig.~\ref{fig:baseline_curves} show rapid convergence of training accuracy to near 100\% within the first 10 epochs, while validation accuracy plateaus around 88\%, suggesting some overfitting that was controlled via dropout and early stopping.  
 
 Overall, the baseline CNN provides a solid starting point;
 
 
 
 
-\section{Task 3: Transfer Learning}
+\section{Task 3: Transfer Learning} \label{sec:task_3}
 Here we will apply transfer learning by using a pre-trained ResNet50V2 model trained on Imagenet. This model has been trained on a large dataset images. We will use this model as a starting point for our own model. Transfer learning is a powerful machine learning technique for leveraging knowledge learned
 from one task and applying it to a new task. This is especially useful when you have limited training data. \\
 
@@ -279,74 +283,91 @@ Finally a dropout layer is added before the new layers.
 The Adam optimizer is used with a learning rate of .. and the loss function is binary cross-entropy.
 Now we compile the model. \\
 
-\centerline{\textcolor{red}{print summary of model.}}\\
-\\
-We also have a augmentation layer. We use RandomBrightness, RandomContrast and RandomRotation to augment the images.\\
+\centerline{\textcolor{red}{print summary of model.}}
+
+We also have a augmentation layer. We use RandomBrightness, RandomContrast and RandomRotation to augment the images.
 
 \subsection{Train the model}
 
 We train the model using the best hyperparameters found while optimizing the
-baseline. We use the training and validation data together as training data\\
+baseline. We use the training and validation data together as training data
 
-\centerline{\textcolor{red}{best Hyperparameter}}\\
+\centerline{\textcolor{red}{best Hyperparameter}}
 
-Here are the plots we get from training the model for trainingset and the validationset\\
+Here are the plots we get from training the model for trainingset and the validationset
 
-\centerline{\textcolor{red}{plot for trainingset}}\\
-\centerline{\textcolor{red}{plot for validationset}}\\
+\centerline{\textcolor{red}{plot for trainingset}}
+\centerline{\textcolor{red}{plot for validationset}}
 
-#####conclusion######
+% Conclusion
 
 
 \subsection{Hyperparameter tuning}
-Now we implement the EarlyStopping callback. While tuning a few parameters. We tune batch_size, learning_rate and dropout_rate. We do this by conducting a rough parameter search.\\
+Now we implement the EarlyStopping callback. While tuning a few parameters. We tune batch\_size, learning\_rate and dropout\_rate. We do this by conducting a rough parameter search.
 
-After the parameter search, we fine-tune the entire model using the the best hyperparameters we found. Which are\\
-\centerline{\textcolor{red}{best Hyperparameter}}\\
+After the parameter search, we fine-tune the entire model using the the best hyperparameters we found. Which are
+\centerline{\textcolor{red}{best Hyperparameter}}
 
 \subsection{Train pre-trained model}
-Now we train the model using the best hyperparameters found while fine-tuning.\\
-By doing this we get the following plots which represent the training accuracy and loss for the pre-trained model over ... epochs.\\
+Now we train the model using the best hyperparameters found while fine-tuning.
+By doing this we get the following plots which represent the training accuracy and loss for the pre-trained model over ... epochs.
 
 \subsection{Fine-tuning the entire model}
-In this step all of the base model layers are unfrozen. The whole model is retrained end to end. We also use the training and validation data together as training data\\
+In this step all of the base model layers are unfrozen. The whole model is retrained end to end. We also use the training and validation data together as training data
 
-We display the confusion matrix. \\
+We display the confusion matrix. 
 
-\centerline{\textcolor{red}{confusion matrix}}\\
+\centerline{\textcolor{red}{confusion matrix}}
 
-Finally a few images are plotted from the test dataset. First without pre-processing, second with their evaluations after pre-processing.\\
+Finally a few images are plotted from the test dataset. First without pre-processing, second with their evaluations after pre-processing.
 
-\centerline{\textcolor{red}{example images}}\\	
-
-
+\centerline{\textcolor{red}{example images}}	
 
 
 
 
 
 
-\section{Task 4: Explainability through Grad-CAM}
-\section{Conclusions}
+
+
+\section{Task 4: Explainability through Grad-CAM} \label{sec:task_4}
+
+
+
+\section{Conclusions}\label{sec:conclusions}
+
+Our preprocessing pipeline’s success in preserving diagnostic detail while standardizing inputs means the model is learning from consistent, clinically relevant features rather than spurious artifacts. By downsampling images to 128×128, we struck a balance between computational efficiency and preserving the lung patterns critical for detecting COVID‑19 infiltrates. The uniform distribution across dataset splits—and the fact that light augmentations did not introduce unrealistic distortions—suggests that our model will be resilient to variations in real‑world chest X‑ray quality (different machines, exposure settings, and patient positioning), reducing the risk that it will latch onto dataset‐specific quirks rather than true pathology.
+
+Moving to the baseline CNN, reaching high sensitivity with somewhat lower specificity highlights an important clinical trade‑off: the model is tuned to minimize missed COVID‑19 cases (false negatives), which is crucial in a screening context, even at the cost of some false positives. This means in practice, our tool could flag more scans for follow‑up rather than risk overlooking an infected patient, aligning with a conservative screening philosophy. The rapid convergence and plateauing of validation performance indicate that our architecture is powerful enough to capture discriminative patterns but also that future gains will likely come not from making the network deeper, but from richer data (additional cases, varied sources) or from integrating more advanced techniques like transfer learning and interpretability methods to further refine what the model "looks at" in each X‑ray.
+
 \section{Author contributions and collaboration}
+
+In our group‐based collaboration, each member took primary responsibility for one of the four major tasks—Seppe led Task 1 (Data Exploration and Pre‐Processing), Luca developed Task 2 (Baseline Model Architecture), Willem implemented Task 3 (Transfer Learning), and Carlo focused on Task 4 (Grad‑CAM Explainability)—while all four contributed together to framing the introduction, discussion, and conclusion. Throughout the project, we regularly cross‐reviewed each other’s code, methodologies, and report drafts to ensure consistency, correctness, and clarity, stepping in to proofread and validate results beyond our individual assignments.
+
 \section{Use of Generative AI}
 
+In this project, Practical 3 served as the foundational template for Tasks 1 \& 2—providing the baseline model architecture, image‐generation pipeline, and core preprocessing routines—while ChatGPT and GitHub Copilot were primarily leveraged to tidy up code, help identify bugs, and offer small implementation suggestions. Neither tool was purposefully relied upon to devise fundamentally new methodologies or novel, overly complex model designs beyond the scope of the course. 
+
+For the written report, ChatGPT was also used sparingly to automate repetitive formatting tasks such as inserting tables and to perform spell‑checking and grammar refinement suggestions, ensuring consistency and polish without supplanting the original content.
 
 \subsection{Figures and Tables}
+
 \paragraph{Positioning Figures and Tables}
 
+All figures and tables are inserted using the placement specifier \verb|[htbp]|; each graphic is scaled to the column width via
+\verb|\includegraphics[width=\linewidth]{…}|, centered in its float, and accompanied by a concise caption via \verb|\caption{…}|. We reference every float in the text (e.g., "Fig. X" or "Table Y") and rely on the class’s default top‑of‑column placement to maintain formatting consistency.
 
-
-
-\section*{References}
-Example References:
 \begin{thebibliography}{00}
-\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+	\begin{comment}
+		\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
+		\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
+		\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
+		\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
+		\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
+		\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
+		\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+	\end{comment}
+	\bibitem{b1} Wang, L., Lin, Z. Q., \& Wong, A. (2020). Covid-net: A tailored deep convolutional neural network design for detection of covid-19 cases from chest x-ray images. Scientific reports, 10(1), 19549.
+	\bibitem{b2} Apostolopoulos, I. D., \& Mpesiana, T. A. (2020). Covid-19: automatic detection from x-ray images utilizing transfer learning with convolutional neural networks. Physical and engineering sciences in medicine, 43, 635-640.
 \end{thebibliography}
 \end{document}
