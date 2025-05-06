@@ -369,7 +369,17 @@ We display the confusion matrix.
 	\label{fig:baseline_curves}
 \end{figure}
 
-Conclusions:\\
+The confusion matrix shows:\\
+
+\begin{itemize}
+	\item True negatives (NORMAL correctly classified): 41
+	\item False positives (NORMAL misclassified as COVID): 59
+	\item False negatives (COVID misclassified as NORMAL): 8
+	\item True positives (COVID correctly classified): 92
+\end{itemize}
+
+This yields a sensitivity (recall for COVID) of $92/(92+8)=0.92$ and a specificity of $41/(41+59)=0.41$. The much higher sensitivity indicates the model is more likely to correctly detect COVID cases, at the cost of a lot of false alarms. \\ 
+
 
 
 Finally a few images are plotted from the test dataset. First without pre-processing, second with their evaluations after pre-processing.\\	
@@ -381,7 +391,6 @@ Finally a few images are plotted from the test dataset. First without pre-proces
 \end{figure}
 \\
 
-For these particular samples we get ...\\
 
 \subsection{Conclusion}
 For the architecture of the final layers added to the pretrained model, we used the same layers as in the previous model.\\
@@ -389,8 +398,7 @@ For the architecture of the final layers added to the pretrained model, we used 
 When examining the training curve of the pretrained model, we observed that it achieved a much lower accuracy compared to the final baseline model. Although the loss curve followed a similar downward trend, it did not reach the same small values as that of the baseline model.\\
 
 However, when evaluating performance on the test set, we found that the final model did improve upon the pretrained model in terms of accuracy, and this was achieved without lowering the learning rate.\\
-
-That said, the fine-tuned model actually performed worse than the baseline, dropping in accuracy from 89\% to 67\%.\\
+That said, the fine-tuned model actually performed worse than the baseline, dropping in accuracy from 89\% to 76\%.\\
 
 From this experience, we conclude that transfer learning has both advantages and disadvantages. On the positive side, training was faster given the same amount of data. On the negative side, the base model and its pretrained weights may not have been well-suited for the task at hand, making fine-tuning a delicate and challenging process.\\
 
