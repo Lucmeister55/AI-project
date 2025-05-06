@@ -62,9 +62,9 @@
 \end{comment}
 
 
-The outbreak of the COVID-19 pandemic in late 2019 has placed unprecedented strain on healthcare systems worldwide, highlighting the urgent need for rapid and accurate diagnostic tools to support clinical decision–making. Chest X‑ray imaging has emerged as a widely available modality for the preliminary screening of COVID‑19 pneumonia, yet visual assessment alone can be time‑consuming and prone to inter‑observer variability~\cite{b1,b2}. In this work, we present a deep learning–based framework for assisted diagnosis of COVID‑19 from chest X‑ray images, leveraging both custom convolutional neural networks and transfer learning approaches.
+The outbreak of the COVID-19 pandemic in late 2019 has placed unprecedented strain on healthcare systems worldwide, highlighting the urgent need for rapid and accurate diagnostic tools to support clinical decision–making. Chest X‑ray imaging has emerged as a widely available modality for the preliminary screening of COVID‑19 pneumonia, yet visual assessment alone can be time‑consuming and prone to inter‑observer variability~\cite{b1,b2}. In this work, a deep learning–based framework for assisted diagnosis of COVID‑19 from chest X‑ray images is presented, leveraging both custom convolutional neural networks and transfer learning approaches.
 
-We begin in Section~\ref{sec:task_1} by exploring the publicly available dataset, detailing our preprocessing pipeline—downsampling, normalization, and light augmentation—and presenting initial sample images (Fig.~\ref{fig:example_images}). In Section~\ref{sec:task_2}, we build and evaluate a baseline CNN model, reporting its architecture (Table~\ref{table:cnn_overview}), learning curves (Fig.~\ref{fig:baseline_curves}), and test‑set performance including a confusion matrix (Fig.~\ref{fig:conf_matrix}). Section~\ref{sec:task_3} introduces transfer learning with a pre‑trained ResNet50V2 backbone, describing model adaptations, hyperparameter tuning, and comparative results. Finally, Section~\ref{sec:task_4} demonstrates model interpretability using Grad‑CAM heatmaps, and Section~\ref{sec:conclusions} summarizes our conclusions and outlines potential future work.
+Section~\ref{sec:task_1} covers exploring the publicly available dataset, detailing the preprocessing pipeline (downsampling, normalization, and light augmentation) and presenting initial sample images (Fig.~\ref{fig:example_images}). In Section~\ref{sec:task_2}, a baseline CNN model is build and evaluated, reporting its architecture (Table~\ref{table:cnn_overview}), learning curves (Fig.~\ref{fig:baseline_curves}), and test‑set performance including a confusion matrix (Fig.~\ref{fig:conf_matrix}). Section~\ref{sec:task_3} introduces transfer learning with a pre‑trained ResNet50V2 backbone, describing model adaptations, hyperparameter tuning, and comparative results. Section~\ref{sec:task_4} demonstrates model interpretability using Grad‑CAM heatmaps, and finally Section~\ref{sec:conclusions} summarizes the conclusions and outlines potential future work.
 
 \section{Task 1: Data Exploration, Pre-Processing and Augmentation}\label{sec:task_1}
 
@@ -126,10 +126,10 @@ A pipeline consisting of loading the images correctly, with optional downsamplin
 
 \section{Task 2: Building the Baseline Model}\label{sec:task_2}
 
-This section describes the construction, training, and evaluation of our initial convolutional neural network (CNN) model for COVID-19 detection from chest X-ray images. We start by outlining the model architecture, proceed to training hyperparameters and procedures, and conclude with performance analysis on the validation and test sets.
+This section describes the construction, training, and evaluation of an initial convolutional neural network (CNN) model for COVID-19 detection from chest X-ray images. Starting with outlining the model architecture, then proceeding to tuning hyperparameters, and concluding with a performance analysis on the validation and test sets.
 
 \subsection{Initial Model Architecture}
-We implemented a custom CNN with the following components:
+A custom CNN with the following components is implemented:
 \begin{itemize}
 	\item \textbf{Input layer}: $128\times128\times1$ grayscale image
 	\item \textbf{Convolutional blocks}: three blocks with increasing filter sizes \{16, 32, 64\}, each block consists of a $3\times3$ convolution, ReLU activation, max-pooling, and dropout (rate 0.1)
@@ -137,10 +137,10 @@ We implemented a custom CNN with the following components:
 	\item \textbf{Output layer}: single unit with sigmoid activation for binary classification
 \end{itemize}
 
-The model uses the Adam optimizer with a learning rate of $10^{-3}$ and binary cross-entropy loss. Accuracy was chosen as the primary metric. The full architecture summary is shown in Table~\ref{table:cnn_overview}.
+The model uses the Adam optimizer with a learning rate of $10^{-3}$ and binary cross-entropy loss. Accuracy was chosen as the primary metric. A summary of the full architecture is shown in Table~\ref{table:cnn_overview}.
 
 \begin{table}[htbp]
-	\caption{Initial Baseline CNN Architecture Overview}
+	\caption{Initial Baseline CNN Architecture Overview.}
 	\label{table:cnn_overview}
 	\centering
 	\begin{adjustbox}{width=0.48\textwidth}
@@ -173,7 +173,6 @@ Training was conducted with the following settings:
 \begin{itemize}
 	\item Batch size: 32
 	\item Epochs: 30 (with early stopping patience of 2 on validation loss)
-	\item Data generators: real-time data augmentation including random rotations (up to $30^\circ$), brightness and contrast adjustments in [0.6, 1.4]
 \end{itemize}
 
 The learning curves are depicted in Fig.~\ref{fig:baseline_curves}.
@@ -193,10 +192,10 @@ A grid search was performed over the following hyperparameters:
 	\item Dense units: \{256, 512\}
 \end{itemize}
 
-Early stopping restored the best weights. The best configuration achieved a validation accuracy of \textbf{0.8958} with dropout rate \textbf{0.1}, \textbf{16} filters, learning rate \(\mathbf{5\times10^{-4}}\), and \textbf{256} dense units. Full results are in Table~\ref{table:hp_results}.
+Early stopping restored the best weights. The best configuration achieved a validation accuracy of \textbf{0.8958} with a dropout rate of \textbf{0.1}, \textbf{16} filters, a learning rate of \(\mathbf{5\times10^{-4}}\), and \textbf{256} dense units. All results are shown in Table~\ref{table:hp_results}.
 
 \begin{table}[htbp]
-	\caption{Hyperparameter Tuning Results (sorted by Val Acc)}
+	\caption{Hyperparameter Tuning Results (sorted by validation accuracy).}
 	\label{table:hp_results}
 	\centering
 	\begin{adjustbox}{width=0.48\textwidth}
@@ -243,7 +242,7 @@ The confusion matrix is shown in Fig.~\ref{fig:conf_matrix}.
 \end{figure}
 
 \subsection{Discussion}
-The baseline model achieved 89\% accuracy, demonstrating strong discriminative power between COVID-19 and normal chest X-ray images. From the confusion matrix (Fig.~\ref{fig:conf_matrix}), we observe:
+The baseline model achieved 89\% accuracy, demonstrating strong discriminative power between COVID-19 and normal chest X-ray images. The following is observed from the confusion matrix (Fig.~\ref{fig:conf_matrix}):
 
 \begin{itemize}
 	\item True negatives (NORMAL correctly classified): 85
@@ -252,11 +251,9 @@ The baseline model achieved 89\% accuracy, demonstrating strong discriminative p
 	\item True positives (COVID correctly classified): 93
 \end{itemize}
 
-This yields a sensitivity (recall for COVID) of $93/(93+7)=0.93$ and a specificity of $85/(85+15)=0.85$. The slightly higher sensitivity indicates the model is more likely to correctly detect COVID cases, at the cost of some false alarms.  
+This yields a sensitivity (recall for COVID) of $93/(93+7)=0.93$ and a specificity of $85/(85+15)=0.85$. The slightly higher sensitivity indicates that the model is more likely to correctly detect COVID cases, at the cost of some false alarms.  
 
-Training curves in Fig.~\ref{fig:baseline_curves} show rapid convergence of training accuracy to near 100\% within the first 10 epochs, while validation accuracy plateaus around 88\%, suggesting some overfitting that was controlled via dropout and early stopping.  
-
-Overall, the baseline CNN provides a solid starting point;
+The training curves, shown in Fig.~\ref{fig:baseline_curves}, suggest rapid convergence of training accuracy to nearly 100\% within the first 10 epochs, while validation accuracy plateaus around 88\%, suggesting that there is still some overfitting, even after controlling via dropout. Overall, the baseline CNN provides a solid starting point.
 
 
 
@@ -379,7 +376,6 @@ Finally a few images are plotted from the test dataset. First without pre-proces
 	\caption{Test Samples with and without pre-processing and there labels}
 	\label{fig:baseline_curves}
 \end{figure}
-\\
 
 For these particular samples we get ...\\
 
@@ -413,11 +409,11 @@ Moving to the baseline CNN, reaching high sensitivity with somewhat lower specif
 
 \section{Author contributions and collaboration}
 
-In our group‐based collaboration, each member took primary responsibility for one of the four major tasks—Seppe led Task 1 (Data Exploration and Pre‐Processing), Luca developed Task 2 (Baseline Model Architecture), Willem implemented Task 3 (Transfer Learning), and Carlo focused on Task 4 (Grad‑CAM Explainability)—while all four contributed together to framing the introduction, discussion, and conclusion. Throughout the project, we regularly cross‐reviewed each other’s code, methodologies, and report drafts to ensure consistency, correctness, and clarity, stepping in to proofread and validate results beyond our individual assignments.
+In our group‐based collaboration, each member took primary responsibility for one of the four major tasks—Seppe led Task 1 (Data Exploration and Pre‐Processing), Luca developed Task 2 (Baseline Model Architecture), Willem implemented Task 3 (Transfer Learning), and Carlo focused on Task 4 (Grad‑CAM Explainability)—while all four contributed together to framing the introduction, discussion, and conclusion. Throughout the project, we regularly cross‐reviewed each other’s code, methodologies, and report drafts to ensure consistency, correctness, and clarity, stepping in to proofread and validate results beyond our individual assignments.
 
 \section{Use of Generative AI}
 
-In this project, Practical 3 served as the foundational template for Tasks 1 \& 2—providing the baseline model architecture, image‐generation pipeline, and core preprocessing routines—while ChatGPT and GitHub Copilot were primarily leveraged to tidy up code, help identify bugs, and offer small implementation suggestions. Neither tool was purposefully relied upon to devise fundamentally new methodologies or novel, overly complex model designs beyond the scope of the course. 
+In this project, Practical 3 served as the foundational template for Tasks 1 \& 2—providing the baseline model architecture, image‐generation pipeline, and core preprocessing routines—while ChatGPT and GitHub Copilot were primarily leveraged to tidy up code, help identify bugs, and offer small implementation suggestions. Neither tool was purposefully relied upon to devise fundamentally new methodologies or novel, overly complex model designs beyond the scope of the course. 
 
 For the written report, ChatGPT was also used sparingly to automate repetitive formatting tasks such as inserting tables and to perform spell‑checking and grammar refinement suggestions, ensuring consistency and polish without supplanting the original content.
 
