@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.5)  6 MAY 2025 17:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.5)  6 MAY 2025 21:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -545,119 +545,118 @@ Underfull \hbox (badness 10000) in paragraph at lines 372--373
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
+[]\OT1/ptm/m/n/10 This yields a sen-si-tiv-ity (re-call for COVID) of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
 
  []
 
-<Images/Transferlearning_4.png, id=40, 684.75826pt x 296.90926pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
+
+ []
+
+
+
+<Images/Transferlearning_4.png, id=40, 673.3155pt x 372.1905pt>
 File: Images/Transferlearning_4.png Graphic file (type png)
 <use Images/Transferlearning_4.png>
-Package pdftex.def Info: Images/Transferlearning_4.png  used on input line 378.
-(pdftex.def)             Requested size: 252.0pt x 109.26573pt.
+Package pdftex.def Info: Images/Transferlearning_4.png  used on input line 388.
+(pdftex.def)             Requested size: 252.0pt x 139.2985pt.
 
-c:/Users/wille/AI-project/report/Report_group25.tex:383: LaTeX Error: There's no line here to end.
+c:/Users/wille/AI-project/report/Report_group25.tex:393: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.383 
+l.393 
       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--388
-
- []
-
-
-
-
-Underfull \hbox (badness 1360) in paragraph at lines 389--390
+Underfull \hbox (badness 1360) in paragraph at lines 398--399
 []\OT1/ptm/m/n/10 When ex-am-in-ing the train-ing curve of the pre-trained
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--390
+Underfull \hbox (badness 10000) in paragraph at lines 398--399
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 391--392
+Underfull \hbox (badness 10000) in paragraph at lines 400--402
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 393--394
+Underfull \hbox (badness 10000) in paragraph at lines 403--404
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--396
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
+Underfull \hbox (badness 10000) in paragraph at lines 405--406
 
  []
 
 
 
 [5 <./Images/Transferlearning_2.png> <./Images/Transferlearning_3.png> <./Images/Transferlearning_4.png>]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 428.
- (C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
+
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 436.
+(C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 
-c:/Users/wille/AI-project/report/Report_group25.tex:429: LaTeX Error: Unicode character   (U+202F)
+c:/Users/wille/AI-project/report/Report_group25.tex:437: LaTeX Error: Unicode character   (U+202F)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.429 ...e every float in the text (e.g., "Fig. 
+l.437 ...e every float in the text (e.g., "Fig. 
                                                   X" or "Table Y") and rel...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/wille/AI-project/report/Report_group25.tex:429: LaTeX Error: Unicode character   (U+202F)
+c:/Users/wille/AI-project/report/Report_group25.tex:437: LaTeX Error: Unicode character   (U+202F)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.429 ...n the text (e.g., "Fig. X" or "Table 
+l.437 ...n the text (e.g., "Fig. X" or "Table 
                                                   Y") and rely on the class�...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--430
+Underfull \hbox (badness 10000) in paragraph at lines 436--438
  \OT1/ptm/m/it/10 a) Po-si-tion-ing Fig-ures and Ta-bles: [][] \OT1/ptm/m/n/10 All fig-ures
  []
 
 
-Underfull \hbox (badness 4366) in paragraph at lines 428--430
+Underfull \hbox (badness 4366) in paragraph at lines 436--438
 \OT1/ptm/m/n/10 and ta-bles are in-serted us-ing the place-ment spec-i-fier
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--430
+Underfull \hbox (badness 10000) in paragraph at lines 436--438
 [][]\OT1/pcr/m/n/10 \includegraphics[width=\linewidth]{...}[]\OT1/ptm/m/n/10 ,
  []
-
-
 
 Excluding 'comment' comment.
 
@@ -695,7 +694,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  86i,11n,93p,975b,354s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Report_group25.pdf (6 pages, 2092885 bytes).
+Output written on Report_group25.pdf (6 pages, 2058307 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
