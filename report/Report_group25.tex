@@ -336,20 +336,18 @@ The model runs without errors and the loss decreases more or less smoothly. The 
 \subsection{Hyperparameter tuning}
 Now we implement the EarlyStopping callback. While tuning a few parameters. We tune batch\_size, learning\_rate and dropout\_rate. We do this by conducting a rough parameter search.
 
-Herefor we perform a grid search over the following hyperparameters:
+So we perform a grid search over the following hyperparameters:
 \begin{itemize}
 	\item Dropout rate: \{0.1, 0.2, 0.3\}
 	\item Learning rate: \{1e-3, 5e-4\}
 	\item Batch size: \{32, 64\}
 \end{itemize}
 
-Early stopping restored the best weights. The best configuration achieved a validation accuracy of \textbf{...} with dropout rate \textbf{...}, \textbf{} filters, learning rate \(\mathbf{5\times10^{-4}}\), and \textbf{256} dense units. Full results are in Table~\ref{table:hp_results}.
+The best configuration achieved a validation accuracy of \textbf{1.0000} with dropout rate \textbf{0.1}, learning rate \(\mathbf{1\times10^{-3}}\), batch size \textbf{64} and 2 epochs.
 
-
-After the parameter search, we fine-tune the entire model using the the best hyperparameters we found. Which are
 
 \subsection{Train pre-trained model}
-Now we train the model using the best hyperparameters found while fine-tuning.
+Now we train the model using the best hyperparameters found while fine-tuning. We do this for 2 epochs.
 By doing this we get the following plots which represent the training accuracy and loss for the pre-trained model over ... epochs.
 
 \begin{figure}[htbp]
@@ -358,8 +356,10 @@ By doing this we get the following plots which represent the training accuracy a
 	\label{fig:baseline_curves}
 \end{figure}
 
+The accuracy increases and the loss decreases.
+
 \subsection{Fine-tuning the entire model}
-In this step all of the base model layers are unfrozen. The whole model is retrained end to end. We also use the training and validation data together as training data
+In this step all of the base model layers are unfrozen. The whole model is retrained end to end. We also use the training and validation data together for training data.\\
 
 We display the confusion matrix.
 
@@ -369,6 +369,7 @@ We display the confusion matrix.
 	\label{fig:baseline_curves}
 \end{figure}
 
+Conclusions:\\
 
 
 Finally a few images are plotted from the test dataset. First without pre-processing, second with their evaluations after pre-processing.\\	
@@ -380,6 +381,7 @@ Finally a few images are plotted from the test dataset. First without pre-proces
 \end{figure}
 \\
 
+For these particular samples we get ...\\
 
 \subsection{Conclusion}
 For the architecture of the final layers added to the pretrained model, we used the same layers as in the previous model.\\
