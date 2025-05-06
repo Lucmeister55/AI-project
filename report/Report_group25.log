@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.5)  6 MAY 2025 13:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.5)  6 MAY 2025 16:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -258,4 +258,434 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
  (C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 13
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/latex/comment\comment.sty
+\CommentStream=\write3
+ Excluding comment 'comment') (C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2024/07/06 v1.0i Color table columns (DPC)
+ (C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen195
+\ar@mcellbox=\box59
+\extrarowheight=\dimen196
+\NC@list=\toks25
+\extratabsurround=\skip57
+\backup@length=\skip58
+\ar@cellbox=\box60
+)
+\everycr=\toks26
+\minrowclearance=\skip59
+\rownum=\count306
+) (C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count307
+) (Report_group25.aux)
+\openout1 = `Report_group25.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+
+-- Lines per column: 56 (exact).
+(C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count308
+\scratchdimen=\dimen197
+\scratchbox=\box61
+\nofMPsegments=\count309
+\nofMParguments=\count310
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count311
+\MPscratchDim=\dimen198
+\MPnumerator=\count312
+\makeMPintoPDFobject=\count313
+\everyMPtoPDFconversion=\toks28
+) (C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
+ (C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
+ (C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) Excluding 'comment' comment.
+
+LaTeX Warning: Citation `b1' on page 1 undefined on input line 65.
+
+
+LaTeX Warning: Citation `b2' on page 1 undefined on input line 65.
+
+
+LaTeX Warning: Reference `sec:task_1' on page 1 undefined on input line 67.
+
+
+LaTeX Warning: Reference `fig:example_images' on page 1 undefined on input line 67.
+
+
+LaTeX Warning: Reference `sec:task_2' on page 1 undefined on input line 67.
+
+
+LaTeX Warning: Reference `table:cnn_overview' on page 1 undefined on input line 67.
+
+
+LaTeX Warning: Reference `fig:baseline_curves' on page 1 undefined on input line 67.
+
+
+LaTeX Warning: Reference `fig:conf_matrix' on page 1 undefined on input line 67.
+
+
+LaTeX Warning: Reference `sec:task_3' on page 1 undefined on input line 67.
+
+
+LaTeX Warning: Reference `sec:task_4' on page 1 undefined on input line 67.
+
+
+LaTeX Warning: Reference `sec:conclusions' on page 1 undefined on input line 67.
+
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 72.
+(C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+
+LaTeX Warning: Reference `fig:example_images' on page 1 undefined on input line 76.
+
+
+
+<Images/example_images.png, id=1, 526.96875pt x 357.13425pt>
+File: Images/example_images.png Graphic file (type png)
+<use Images/example_images.png>
+Package pdftex.def Info: Images/example_images.png  used on input line 79.
+(pdftex.def)             Requested size: 252.0pt x 170.78491pt.
+
+LaTeX Warning: Reference `fig:pixel_statistics' on page 1 undefined on input line 85.
+
+<Images/pixel_statistics.png, id=3, 714.7503pt x 389.5353pt>
+File: Images/pixel_statistics.png Graphic file (type png)
+<use Images/pixel_statistics.png>
+Package pdftex.def Info: Images/pixel_statistics.png  used on input line 88.
+(pdftex.def)             Requested size: 252.0pt x 137.33795pt.
+
+LaTeX Warning: Reference `fig:downsample' on page 1 undefined on input line 96.
+
+<Images/downsample.png, id=4, 859.2903pt x 453.8556pt>
+File: Images/downsample.png Graphic file (type png)
+<use Images/downsample.png>
+Package pdftex.def Info: Images/downsample.png  used on input line 99.
+(pdftex.def)             Requested size: 252.0pt x 133.09676pt.
+
+
+[1{C:/Users/wille/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
+
+
+ <./Images/example_images.png>]
+
+LaTeX Warning: Reference `fig:augmentation' on page 2 undefined on input line 107.
+
+<Images/augmentation.png, id=13, 911.65594pt x 625.58719pt>
+File: Images/augmentation.png Graphic file (type png)
+<use Images/augmentation.png>
+Package pdftex.def Info: Images/augmentation.png  used on input line 110.
+(pdftex.def)             Requested size: 252.0pt x 172.91998pt.
+
+
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 135.
+(C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 135.
+
+
+LaTeX Warning: Reference `table:cnn_overview' on page 2 undefined on input line 140.
+
+
+
+[2 <./Images/pixel_statistics.png> <./Images/downsample.png> <./Images/augmentation.png>]
+
+LaTeX Warning: Reference `fig:baseline_curves' on page 3 undefined on input line 179.
+
+<Images/baseline_curves.png, id=23, 828.9369pt x 492.8814pt>
+File: Images/baseline_curves.png Graphic file (type png)
+<use Images/baseline_curves.png>
+Package pdftex.def Info: Images/baseline_curves.png  used on input line 182.
+(pdftex.def)             Requested size: 252.0pt x 149.83598pt.
+
+LaTeX Warning: Reference `table:hp_results' on page 3 undefined on input line 196.
+
+
+LaTeX Warning: Reference `fig:conf_matrix' on page 3 undefined on input line 237.
+
+<Images/confusion_matrix_baseline.png, id=24, 364.9635pt x 339.669pt>
+File: Images/confusion_matrix_baseline.png Graphic file (type png)
+<use Images/confusion_matrix_baseline.png>
+Package pdftex.def Info: Images/confusion_matrix_baseline.png  used on input line 240.
+(pdftex.def)             Requested size: 176.39923pt x 164.17432pt.
+
+LaTeX Warning: Reference `fig:conf_matrix' on page 3 undefined on input line 246.
+
+
+
+
+LaTeX Warning: Reference `fig:baseline_curves' on page 3 undefined on input line 257.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--267
+
+ []
+
+
+
+[3 <./Images/baseline_curves.png> <./Images/confusion_matrix_baseline.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 268--274
+
+ []
+
+
+Underfull \hbox (badness 4765) in paragraph at lines 275--276
+\OT1/ptm/m/n/10 in-for-ma-tion learned from the ini-tial task from be-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+
+ []
+
+
+Underfull \hbox (badness 3039) in paragraph at lines 278--279
+[]\OT1/ptm/m/n/10 We in-stan-ti-ate the base model with the "im-a-genet"
+ []
+
+
+Underfull \hbox (badness 1533) in paragraph at lines 278--279
+\OT1/ptm/m/n/10 pre-trained weights. We do not in-clude the top lay-ers.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
+
+ []
+
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--320
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--325
+
+ []
+
+<Images/Transferlearning_1.png, id=33, 687.16725pt x 395.67825pt>
+File: Images/Transferlearning_1.png Graphic file (type png)
+<use Images/Transferlearning_1.png>
+Package pdftex.def Info: Images/Transferlearning_1.png  used on input line 327.
+(pdftex.def)             Requested size: 252.0pt x 145.10057pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 332--333
+
+ []
+
+
+LaTeX Warning: Reference `table:hp_results' on page 4 undefined on input line 346.
+
+
+
+[4 <./Images/Transferlearning_1.png>]
+<Images/Transferlearning_2.png, id=38, 702.82574pt x 269.808pt>
+File: Images/Transferlearning_2.png Graphic file (type png)
+<use Images/Transferlearning_2.png>
+Package pdftex.def Info: Images/Transferlearning_2.png  used on input line 356.
+(pdftex.def)             Requested size: 252.0pt x 96.73969pt.
+<Images/Transferlearning_3.png, id=39, 396.2805pt x 349.90726pt>
+File: Images/Transferlearning_3.png Graphic file (type png)
+<use Images/Transferlearning_3.png>
+Package pdftex.def Info: Images/Transferlearning_3.png  used on input line 367.
+(pdftex.def)             Requested size: 252.0pt x 222.51431pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
+
+ []
+
+<Images/Transferlearning_4.png, id=40, 684.75826pt x 296.90926pt>
+File: Images/Transferlearning_4.png Graphic file (type png)
+<use Images/Transferlearning_4.png>
+Package pdftex.def Info: Images/Transferlearning_4.png  used on input line 377.
+(pdftex.def)             Requested size: 252.0pt x 109.26573pt.
+
+c:/Users/wille/AI-project/report/Report_group25.tex:382: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.382 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
+
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 387--388
+[]\OT1/ptm/m/n/10 When ex-am-in-ing the train-ing curve of the pre-trained
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
+
+ []
+
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--390
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--396
+
+ []
+
+
+
+[5 <./Images/Transferlearning_2.png> <./Images/Transferlearning_3.png> <./Images/Transferlearning_4.png>]
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 426.
+ (C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+
+c:/Users/wille/AI-project/report/Report_group25.tex:427: LaTeX Error: Unicode character   (U+202F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.427 ...e every float in the text (e.g., "Fig. 
+                                                  X" or "Table Y") and rel...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/wille/AI-project/report/Report_group25.tex:427: LaTeX Error: Unicode character   (U+202F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.427 ...n the text (e.g., "Fig. X" or "Table 
+                                                  Y") and rely on the class�...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 426--428
+ \OT1/ptm/m/it/10 a) Po-si-tion-ing Fig-ures and Ta-bles: [][] \OT1/ptm/m/n/10 All fig-ures
+ []
+
+
+Underfull \hbox (badness 4366) in paragraph at lines 426--428
+\OT1/ptm/m/n/10 and ta-bles are in-serted us-ing the place-ment spec-i-fier
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 426--428
+[][]\OT1/pcr/m/n/10 \includegraphics[width=\linewidth]{...}[]\OT1/ptm/m/n/10 ,
+ []
+
+Excluding 'comment' comment.
+
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+
+
+[6] (Report_group25.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-04-14>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 5687 strings out of 469941
+ 93623 string characters out of 5469431
+ 504992 words of memory out of 5000000
+ 32400 multiletter control sequences out of 15000+600000
+ 669837 words of font info for 133 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 86i,11n,93p,975b,354s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Report_group25.pdf (6 pages, 2092779 bytes).
+PDF statistics:
+ 97 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+

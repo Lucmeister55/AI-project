@@ -3,51 +3,62 @@
 \providecommand \oddpage@label [2]{}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {II}Task 1: Data Exploration, Pre-Processing and Augmentation}{1}{}\protected@file@percent }
-\newlabel{sec:task_1}{{II}{1}{}{}{}}
+\newlabel{sec:task_1}{{II}{1}{}{section.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Loading the data}{1}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Data exploration}{1}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A few images from the training dataset with accompanying labels.}}{1}{}\protected@file@percent }
-\newlabel{fig:example_images}{{1}{1}{}{}{}}
+\newlabel{fig:example_images}{{1}{1}{}{figure.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Pre-processing}{1}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces A visualization of the average image (left) and a variation heatmap (right) with accompanying global statistics from the training dataset.}}{2}{}\protected@file@percent }
-\newlabel{fig:pixel_statistics}{{2}{2}{}{}{}}
+\newlabel{fig:pixel_statistics}{{2}{2}{}{figure.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces An example of a downsampled image using bilinear interpolation (299x299 -> 128x128).}}{2}{}\protected@file@percent }
-\newlabel{fig:downsample}{{3}{2}{}{}{}}
+\newlabel{fig:downsample}{{3}{2}{}{figure.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-D}}Augmentation}{2}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Examples of different transformations as well as the combination of them together.}}{2}{}\protected@file@percent }
-\newlabel{fig:augmentation}{{4}{2}{}{}{}}
+\newlabel{fig:augmentation}{{4}{2}{}{figure.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-E}}Pipeline}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {III}Task 2: Building the Baseline Model}{2}{}\protected@file@percent }
-\newlabel{sec:task_2}{{III}{2}{}{}{}}
+\newlabel{sec:task_2}{{III}{2}{}{section.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Initial Model Architecture}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Training Procedure}{2}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Initial Baseline CNN Architecture Overview}}{3}{}\protected@file@percent }
-\newlabel{table:cnn_overview}{{I}{3}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Training Procedure}{3}{}\protected@file@percent }
+\newlabel{table:cnn_overview}{{I}{3}{}{table.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Training and validation accuracy and loss for the baseline CNN over 30 epochs.}}{3}{}\protected@file@percent }
-\newlabel{fig:baseline_curves}{{5}{3}{}{}{}}
+\newlabel{fig:baseline_curves}{{5}{3}{}{figure.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Hyperparameter Tuning}{3}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Hyperparameter Tuning Results (sorted by Val Acc)}}{3}{}\protected@file@percent }
-\newlabel{table:hp_results}{{II}{3}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Final Baseline Model}{3}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Hyperparameter Tuning Results (sorted by Val Acc)}}{3}{}\protected@file@percent }
+\newlabel{table:hp_results}{{II}{3}{}{table.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Confusion matrix of the final baseline model on the test set.}}{3}{}\protected@file@percent }
-\newlabel{fig:conf_matrix}{{6}{3}{}{}{}}
+\newlabel{fig:conf_matrix}{{6}{3}{}{figure.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-E}}Discussion}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {IV}Task 3: Transfer Learning}{4}{}\protected@file@percent }
-\newlabel{sec:task_3}{{IV}{4}{}{}{}}
+\newlabel{sec:task_3}{{IV}{4}{}{section.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Setup the base model}{4}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Initial Transfer Model Architecture}}{4}{}\protected@file@percent }
+\newlabel{table:cnn_overview}{{III}{4}{}{table.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Train the model}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Training and validation accuracy and loss for the base model over 30 epochs.}}{4}{}\protected@file@percent }
+\newlabel{fig:baseline_curves}{{7}{4}{}{figure.7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Hyperparameter tuning}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Train pre-trained model}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-E}}Fine-tuning the entire model}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {V}Task 4: Explainability through Grad-CAM}{4}{}\protected@file@percent }
-\newlabel{sec:task_4}{{V}{4}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusions}{4}{}\protected@file@percent }
-\newlabel{sec:conclusions}{{VI}{4}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Train pre-trained model}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Training and validation accuracy and loss for the pre-trained model}}{5}{}\protected@file@percent }
+\newlabel{fig:baseline_curves}{{8}{5}{}{figure.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-E}}Fine-tuning the entire model}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Confusion matrix for the final model}}{5}{}\protected@file@percent }
+\newlabel{fig:baseline_curves}{{9}{5}{}{figure.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-F}}Conclusion}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Test Samples with and without pre-processing and there labels}}{5}{}\protected@file@percent }
+\newlabel{fig:baseline_curves}{{10}{5}{}{figure.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Task 4: Explainability through Grad-CAM}{5}{}\protected@file@percent }
+\newlabel{sec:task_4}{{V}{5}{}{section.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusions}{5}{}\protected@file@percent }
+\newlabel{sec:conclusions}{{VI}{5}{}{section.6}{}}
 \bibcite{b1}{1}
 \bibcite{b2}{2}
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Author contributions and collaboration}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {VIII}Use of Generative AI}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-A}}Figures and Tables}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {VIII-A}0a}Positioning Figures and Tables}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{References}{5}{}\protected@file@percent }
-\gdef \@abspage@last{5}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Author contributions and collaboration}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Use of Generative AI}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-A}}Figures and Tables}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {VIII-A}0a}Positioning Figures and Tables}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{6}{}\protected@file@percent }
+\gdef \@abspage@last{6}

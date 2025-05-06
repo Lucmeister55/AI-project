@@ -262,7 +262,7 @@ Overall, the baseline CNN provides a solid starting point;
 
 
 \section{Task 3: Transfer Learning} \label{sec:task_3}
-Here we will apply transfer learning by using a pre-trained ResNet50V2 model trained on Imagenet. This model has been trained on a large dataset images. We will use this model as a starting point for our own model. Transfer learning is a powerful machine learning technique for leveraging knowledge learned
+In this task we will apply transfer learning by using a pre-trained ResNet50V2 model trained on Imagenet. This model has been trained on a large dataset images. We will use this model as a starting point for our own model. Transfer learning is a powerful machine learning technique for leveraging knowledge learned
 from one task and applying it to a new task. This is especially useful when you have limited training data. \\
 
 The typical workflow for transfer learning is as follows: \\
@@ -277,58 +277,122 @@ We freeze the layers of the pretrained model to prevent information learned from
 \subsection{Setup the base model}
 We instantiate the base model with the "imagenet" pre-trained weights. We do not include the top layers. The model is ResNet50V2. We freeze al the layers of the base model so they are not updated during the training process.\\
 
-New layers are added to the model. \textcolor{red}{explain layers.}\\
+New layers are added to the model. We added 2 Dense layers.\\
 
-Finally a dropout layer is added before the new layers.
+\begin{table}[htbp]
+	\caption{Initial Transfer Model Architecture}
+	\label{table:cnn_overview}
+	\centering
+	\begin{adjustbox}{width=0.48\textwidth}
+		\begin{tabular}{|l|l|r|}
+			\hline
+			\textbf{Layer (type)} & \textbf{Output Shape} & \textbf{\# Params} \\
+			\hline
+			augmentation                   & (None, 128, 128, 3)    &      0  \\
+			ResNet50V2 (pre-trained)       & (None, 4, 4, 2048)     & 23,564,800\\
+			Dropout (rate = 0.1)           & (None, 4, 4, 2048)     &      0  \\
+			GlobalAveragePooling2D         & (None, 2048)           &      0  \\
+			Dense (256 units)              & (None, 256)            & 524,544\\
+			Dropout (rate = 0.1)           & (None, 256)            &      0  \\
+			Dense (256 units)              & (None, 256)            & 65,792\\
+			Dropout (rate = 0.1)           & (None, 256)            &      0  \\
+			Dense\_1 (1 unit, sigmoid)     & (None, 1)              &     257 \\
+			\hline
+			\multicolumn{2}{|l|}{\textbf{Total parameters}} & \textbf{24,155,393} \\
+			\multicolumn{2}{|l|}{Trainable parameters}       & \textbf{590,593} \\
+			\multicolumn{2}{|l|}{Non‑trainable parameters}   & \textbf{23,564,800}\\
+			\hline
+		\end{tabular}
+	\end{adjustbox}
+\end{table}
+
+Finally a dropout layer is added before the new layers. We add 2 more dropout layers between the dense layers.\\
 The Adam optimizer is used with a learning rate of .. and the loss function is binary cross-entropy.
-Now we compile the model. \\
+Now we compile the model and it's ready to train\\
 
-\centerline{\textcolor{red}{print summary of model.}}
-
-We also have a augmentation layer. We use RandomBrightness, RandomContrast and RandomRotation to augment the images.
+We also have a augmentation layer. We use RandomBrightness, RandomContrast and RandomRotation to augment the images and prevent overfitting.
 
 \subsection{Train the model}
 
 We train the model using the best hyperparameters found while optimizing the
-baseline. We use the training and validation data together as training data
+baseline. We use the training and validation data together as training data. 
+(See III Task 2, paragraph C.)\\
 
-\centerline{\textcolor{red}{best Hyperparameter}}
 
-Here are the plots we get from training the model for trainingset and the validationset
 
-\centerline{\textcolor{red}{plot for trainingset}}
-\centerline{\textcolor{red}{plot for validationset}}
+Here are the plots we get from training the model for trainingset for thirty epochs while holding out the
+validation set to monitor its performance.\\
 
-% Conclusion
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=\linewidth]{Images/Transferlearning_1.png}}
+	\caption{Training and validation accuracy and loss for the base model over 30 epochs.}
+	\label{fig:baseline_curves}
+\end{figure}
+
+The model runs without errors and the loss decreases more or less smoothly. The accuracy is very poor. We have tried a lot of configurations and different augmentation factors but we had a lot of overfitting. We try to avoid this by choosing the right layers, parameters and the right augmentation and this was the result.\\
+
 
 
 \subsection{Hyperparameter tuning}
 Now we implement the EarlyStopping callback. While tuning a few parameters. We tune batch\_size, learning\_rate and dropout\_rate. We do this by conducting a rough parameter search.
 
+Herefor we perform a grid search over the following hyperparameters:
+\begin{itemize}
+	\item Dropout rate: \{0.1, 0.2, 0.3\}
+	\item Learning rate: \{1e-3, 5e-4\}
+	\item Batch size: \{32, 64\}
+\end{itemize}
+
+Early stopping restored the best weights. The best configuration achieved a validation accuracy of \textbf{...} with dropout rate \textbf{...}, \textbf{} filters, learning rate \(\mathbf{5\times10^{-4}}\), and \textbf{256} dense units. Full results are in Table~\ref{table:hp_results}.
+
+
 After the parameter search, we fine-tune the entire model using the the best hyperparameters we found. Which are
-\centerline{\textcolor{red}{best Hyperparameter}}
 
 \subsection{Train pre-trained model}
 Now we train the model using the best hyperparameters found while fine-tuning.
 By doing this we get the following plots which represent the training accuracy and loss for the pre-trained model over ... epochs.
 
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=\linewidth]{Images/Transferlearning_2.png}}
+	\caption{Training and validation accuracy and loss for the pre-trained model}
+	\label{fig:baseline_curves}
+\end{figure}
+
 \subsection{Fine-tuning the entire model}
 In this step all of the base model layers are unfrozen. The whole model is retrained end to end. We also use the training and validation data together as training data
 
-We display the confusion matrix. 
+We display the confusion matrix.
 
-\centerline{\textcolor{red}{confusion matrix}}
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=\linewidth]{Images/Transferlearning_3.png}}
+	\caption{Confusion matrix for the final model}
+	\label{fig:baseline_curves}
+\end{figure}
 
-Finally a few images are plotted from the test dataset. First without pre-processing, second with their evaluations after pre-processing.
 
-\centerline{\textcolor{red}{example images}}	
+
+Finally a few images are plotted from the test dataset. First without pre-processing, second with their evaluations after pre-processing.\\	
+
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=\linewidth]{Images/Transferlearning_4.png}}
+	\caption{Test Samples with and without pre-processing and there labels}
+	\label{fig:baseline_curves}
+\end{figure}
+\\
+
 
 \subsection{Conclusion}
-For the architecture for the final layers which we added to the pretrained model we used the same layers as the previous model. \\ 
-The training curve of the pretrained model has a much lower accuracy than the final baseline model. The loss curve is similar as in it goes down but it does not reaches as low as the baseline loss curve. \\
+For the architecture of the final layers added to the pretrained model, we used the same layers as in the previous model.\\
 
+When examining the training curve of the pretrained model, we observed that it achieved a much lower accuracy compared to the final baseline model. Although the loss curve followed a similar downward trend, it did not reach the same small values as that of the baseline model.\\
 
+However, when evaluating performance on the test set, we found that the final model did improve upon the pretrained model in terms of accuracy, and this was achieved without lowering the learning rate.\\
 
+That said, the fine-tuned model actually performed worse than the baseline, dropping in accuracy from 89\% to 67\%.\\
+
+From this experience, we conclude that transfer learning has both advantages and disadvantages. On the positive side, training was faster given the same amount of data. On the negative side, the base model and its pretrained weights may not have been well-suited for the task at hand, making fine-tuning a delicate and challenging process.\\
+
+To improve the effectiveness of transfer learning in this context, several modifications could be considered. Notably, the base model was pretrained on RGB images of various objects, which differs significantly from the grayscale medical images used in our task. Using a pretrained model that was trained on data more similar to our target domain could yield better results and enhance the overall performance of the transfer learning approach.\\
 
 
 
