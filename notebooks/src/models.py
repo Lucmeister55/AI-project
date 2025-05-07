@@ -1,7 +1,7 @@
 import tensorflow as tf
 from tensorflow.keras.layers import Dense, Conv2D, Flatten, Dropout, MaxPooling2D, Input, RandomBrightness, RandomContrast, RandomRotation, GlobalAveragePooling2D, Input, BatchNormalization, RandomZoom
 from tensorflow.keras.models import Sequential
-
+from tensorflow.keras.models import Model
 
 def custom_CNN(img_shape, dropout_rate, filters, dense_unit, lr, metrics):
     model = Sequential(
@@ -29,7 +29,33 @@ def custom_CNN(img_shape, dropout_rate, filters, dense_unit, lr, metrics):
 
     return model
 
+def custom_CNN_functional(img_shape, dropout_rate, filters, dense_unit, lr, metrics):
+    inputs = Input(shape=img_shape)
 
+    x = Conv2D(filters, 3, padding="same", activation="relu")(inputs)
+    x = MaxPooling2D()(x)
+    x = Dropout(dropout_rate)(x)
+
+    x = Conv2D(filters * 2, 3, padding="same", activation="relu")(x)
+    x = MaxPooling2D()(x)
+
+    x = Conv2D(filters * 4, 3, padding="same", activation="relu")(x)
+    x = MaxPooling2D()(x)
+    x = Dropout(dropout_rate)(x)
+
+    x = Flatten()(x)
+    x = Dense(dense_unit, activation="relu")(x)
+    outputs = Dense(1, activation="sigmoid")(x)
+
+    model = Model(inputs=inputs, outputs=outputs)
+
+    # Create optimizer with the given learning rate.
+    optimizer = tf.keras.optimizers.Adam(learning_rate=lr)
+    model.compile(
+        optimizer=optimizer, loss=tf.keras.losses.BinaryCrossentropy(), metrics=metrics
+    )
+
+    return model
 
 def transfer_model(base_model, dropout_rate, dense_unit, lr, metrics):
 
