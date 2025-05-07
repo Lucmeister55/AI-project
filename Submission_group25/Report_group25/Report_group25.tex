@@ -8,6 +8,7 @@
 \usepackage{xcolor}
 \usepackage{comment}
 \usepackage[table]{xcolor}
+\usepackage{subcaption}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
     
@@ -350,46 +351,104 @@ From this experience, it can be concluded that transfer learning has both advant
 To improve the effectiveness of transfer learning in this context, several modifications could be considered. Notably, the base model was pretrained on RGB images of various objects, which differs significantly from the grayscale medical images used in our task. Using a pretrained model that was trained on data more similar to our target domain could yield better results and enhance the overall performance of the transfer learning approach.
 
 \section{Task 4: Explainability through Grad-CAM} \label{sec:task_4}
+In this section, we analyse how our COVID-19 classifier makes decisions. We will do so by introducing a technique called Gradient-weighted Class Activation Mapping (which, from now on, we will refer to as Grad-CAM), which allows us to visually analyse what parts of the input images the model focusses on when making decisions about the presence of COVID-19.
+
+We will generate heatmap overlays on test images using the Grad-CAM technique. This way, we will be able to see which regions of the lungs are of more importance to the classifier than others. We hope to see highlights in COVID-relevant regions, as this would mean our model actually learned to detect COVID-19 as opposed to relying on cheats or artifacts. Furthermore, we hope to see a difference in activation patterns when comparing normal and affected lungs during our analysis.
+
+\subsection{Grad-CAM implementation}
+We use the pre-trained model from Task 2 (the baseline model), as it has delivered us the best test performances. The model's architecture overview can be found in Table~\ref{table:baseline_cnn_overview}. 
+
+Removing the final layer's activation (sigmoid in our case) is the next crucial step in setting up our model for Grad-CAM\@. This avoids suppressing the gradient into a small range, which would cause for meaningless heatmaps.
+
+Next, we select a test sample from our test batch and pre-process it by normalising and adding a dimension as to transform it into a 'batch' of size one. Using this test image, we evaluate our model and obtain the last convolutional layer's output. This layer's output is specifically necessary to compute the gradients of the predicted class, because it precedes the final layers' flattening, thus preventing the loss of spacial information.
+
+The next step is to compute the gradients of the predicted class with respect to the feature map of the last convolutional layer's output we just obtained. This is where we adjust the Keras tutorial to fit binary classification by setting the prediction index to zero.
+
+Now we follow the prewritten code in the Keras tutorial to complete the following steps: obtaining the heatmap by averaging the gradients along the spacial dimension and using these as weights for channel importance, normalising the heatmap between 0 and 1 and mapping it onto the original sample space, and finally overlaying the heatmap onto the original image by adding to its values rescaled by 0.4.
+
+The heatmap we obtain by applying our Grad-CAM implementation to our test image is shown in Fig.~\ref{fig:gradcam}. We conclude that it works correctly.
+
+\subsection{Explaining the decision with Grad-CAM}
 
 \begin{figure}[htbp]
-	\centerline{\includegraphics[width=\linewidth]{Images/gradcam.png}}
-	\caption{Grad CAM test image.}
-	\label{fig:gradcam}
+	\centerline{\includegraphics[width=\linewidth]{Images/gradcam_test_image.png}}
+	\caption{Grad-CAM of the test image.}
+	\label{fig:gradcam_test_image}
 \end{figure}
 
-\section{Conclusions}\label{sec:conclusions}
+Firstly, when we analyse the test image's Grad-CAM, we see that the entirety of the lungs are highlighted. This is both expected, as we want our model to detect COVID-19 indications within the lungs, and also a possible concern, as there is no specific region within the lungs that seems to be prodominent in the decision–making of our model. Yet another reason for concern are the highlighted areas around the edges of the scan. Our classifier seems to focus a lot on areas which are not a part of the X-ray, areas that do not provide any additional information as to whether COVID-19 is present or not.
 
+To explain the way our classifier makes decisions, we need to further divide our test dataset. We devide our dataset into four distinct groups:
+
+\begin{itemize}
+	\item Normal lungs (True Negative)
+	\item Affected lungs (True Positive)
+	\item Normal lungs that were misclassified by our model (False Positive)
+	\item Affected lungs that were misclassified by our model (False Negative)
+\end{itemize}
+\vspace{0.5cm}
+
+\begin{figure}[htbp]
+    \centering
+	\begin{subfigure}[b]{0.22\linewidth}
+        \includegraphics[width=\linewidth]{Images/gradcam_true_neg.png}
+        \caption{True Negative}
+		\label{fig:true_neg}
+    \end{subfigure}
+    \hfill
+	\begin{subfigure}[b]{0.22\linewidth}
+        \includegraphics[width=\linewidth]{Images/gradcam_true_pos.png}
+        \caption{True Positive}
+		\label{fig:true_pos}
+    \end{subfigure}
+	\hfill
+    \begin{subfigure}[b]{0.22\linewidth}
+        \includegraphics[width=\linewidth]{Images/gradcam_false_pos.png}
+        \caption{False Positive}
+		\label{fig:false_pos}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.22\linewidth}
+        \includegraphics[width=\linewidth]{Images/gradcam_false_neg.png}
+        \caption{False Negative}
+		\label{fig:false_neg}
+    \end{subfigure}
+    \hfill
+    \caption{Grad-CAM visualizations per classification group.}
+    \label{fig:gradcam_groups}
+\end{figure}
+
+We've taken one image from each of the four groups, as shown in Fig.~\ref{fig:gradcam_groups}. These images mostly tell us that our model always looks at the edges of the scans, which isn't desired. Setting aside the highlighted edges, we can also see that the lungs are highlighted.
+
+Let's first look at the correctly classified images. In the normal lungs (\subref{fig:true_neg}), the model doesn't seem to take interest in specific parts of the lungs, it just overlooks them generally. While in the affected lungs (\subref{fig:true_pos}), the highlighted regions seem to be more specific. We chose this example for affected lungs, because it seems that the lungs are actually not fully highlighted. This could mean our model made a 'lucky guess' based off of artifacts (like the 'L'-shaped indicator or the edges of the scan). This is a problem because it shows us that the classifier (partially) makes decisions based off of information which has nothing to do with the state of the lungs, thus not providing a reliable classification. It shows us that the model isn't perfect and needs more training (data).
+
+Now, let's look at the misclassified images. In the case where normal lungs were misclassified (\subref{fig:false_pos}), we can see the classifier focussing again on specific parts of the lungs, but being missled into thinking the lungs contain COVID-related anomalies. When we look at the affected lungs which our classifier wrongly assumed were normal (\subref{fig:false_neg}), we can see that the highlighted regions are much more general. Either the X-ray doesn't show clear enough signs of COVID-19, or our model is not yet optimally trained.
+
+\subsection{Discussion}
+Because we work with a binary classifier, our model outputs a single sigmoid logit rather than a full vector of class scores, we removed the final activation so we'd get an unsquashed logit and then treated that scalar as the "class score" when computing gradients. Otherwise, the core Grad‑CAM steps remain unchanged.
+
+Furthermore, by having only two class labels, the highlights on our Grad‑CAM simply show which regions push the model toward "positive" versus "negative." There's no need to compare multiple classes, so the heatmap directly reflects the single decision boundary, which makes interpretation simpler but less nuanced than in a multiclass setting.
+
+In well‑trained cases, the heatmaps tend to light up lung regions where COVID‑related opacities appear (e.g., ground‑glass patterns or consolidations). In our case we rarely see such specific regions highlighted (perhaps due to limited data and limited training time). We are also seeing activations outside the lungs, which tells us that the model might be overfitting or might just be focusing on the wrong features.
+
+In this way, the Grad-CAM visualizations did help us identify potential problems in our model. By inspecting where the model focuses, we can spot biases. For example, if Grad‑CAM repeatedly highlights text labels, borders, or equipment artifacts instead of lung tissue, that indicates the model is learning shortcuts tied to dataset artifacts rather than true pathology. The Grad‑CAM vizualisations were also especially helpful for misclassifications: for false positives it often lights up benign findings (like old scars), and for false negatives it shows when the model simply missed subtle opacities. Seeing these patterns guides us to understand exactly why a sample was mistaken.
+
+If we could collect additional data and retrain the model, we would collect more examples of under‑represented disease patterns (e.g., peripheral opacities), remove or crop out distracting artifacts (like text markers), and balance data from different hospitals. This targeted data curation and augmentation would help the model learn to focus properly on medically relevant lung features.
+
+\section{Conclusions}\label{sec:conclusions}
 Our preprocessing pipeline’s success in preserving diagnostic detail while standardizing inputs means the model is learning from consistent, clinically relevant features rather than spurious artifacts. By downsampling images to 128×128, we struck a balance between computational efficiency and preserving the lung patterns critical for detecting COVID‑19 infiltrates. The uniform distribution across dataset splits—and the fact that light augmentations did not introduce unrealistic distortions—suggests that our model will be resilient to variations in real‑world chest X‑ray quality (different machines, exposure settings, and patient positioning), reducing the risk that it will latch onto dataset‐specific quirks rather than true pathology.
 
 Moving to the baseline CNN, reaching high sensitivity with somewhat lower specificity highlights an important clinical trade‑off: the model is tuned to minimize missed COVID‑19 cases (false negatives), which is crucial in a screening context, even at the cost of some false positives. This means in practice, our tool could flag more scans for follow‑up rather than risk overlooking an infected patient, aligning with a conservative screening philosophy. The rapid convergence and plateauing of validation performance indicate that our architecture is powerful enough to capture discriminative patterns but also that future gains will likely come not from making the network deeper, but from richer data (additional cases, varied sources) or from integrating more advanced techniques like transfer learning and interpretability methods to further refine what the model "looks at" in each X‑ray.
 
 \section{Author contributions and collaboration}
-
 In our group‐based collaboration, each member took primary responsibility for one of the four major tasks—Seppe led Task 1 (Data Exploration and Pre‐Processing), Luca developed Task 2 (Baseline Model Architecture), Willem implemented Task 3 (Transfer Learning), and Carlo focused on Task 4 (Grad‑CAM Explainability)—while all four contributed together to framing the introduction, discussion, and conclusion. Throughout the project, we regularly cross‐reviewed each other’s code, methodologies, and report drafts to ensure consistency, correctness, and clarity, stepping in to proofread and validate results beyond our individual assignments.
 
 \section{Use of Generative AI}
-
-In this project, Practical 3 served as the foundational template for Tasks 1 \& 2—providing the baseline model architecture, image‐generation pipeline, and core preprocessing routines—while ChatGPT and GitHub Copilot were primarily leveraged to tidy up code, help identify bugs, and offer small implementation suggestions. Neither tool was purposefully relied upon to devise fundamentally new methodologies or novel, overly complex model designs beyond the scope of the course. 
+In this project, Practical 3 served as the foundational template for Tasks 1 \& 2—providing the baseline model architecture, image‐generation pipeline, and core preprocessing routines—while ChatGPT and GitHub Copilot were primarily leveraged to tidy up code, help identify bugs, and offer small implementation suggestions. Neither tool was purposefully relied upon to devise fundamentally new methodologies or novel, overly complex model designs beyond the scope of the course.
 
 For the written report, ChatGPT was also used sparingly to automate repetitive formatting tasks such as inserting tables and to perform spell‑checking and grammar refinement suggestions, ensuring consistency and polish without supplanting the original content.
 
-\subsection{Figures and Tables}
-
-\paragraph{Positioning Figures and Tables}
-
-All figures and tables are inserted using the placement specifier \verb|[htbp]|; each graphic is scaled to the column width via
-\verb|\includegraphics[width=\linewidth]{…}|, centered in its float, and accompanied by a concise caption via \verb|\caption{…}|. We reference every float in the text (e.g., "Fig. X" or "Table Y") and rely on the class’s default top‑of‑column placement to maintain formatting consistency.
-
 \begin{thebibliography}{00}
-	\begin{comment}
-		\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-		\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-		\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-		\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-		\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-		\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-		\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
-	\end{comment}
 	\bibitem{b1} Wang, L., Lin, Z. Q., \& Wong, A. (2020). Covid-net: A tailored deep convolutional neural network design for detection of covid-19 cases from chest x-ray images. Scientific reports, 10(1), 19549.
 	\bibitem{b2} Apostolopoulos, I. D., \& Mpesiana, T. A. (2020). Covid-19: automatic detection from x-ray images utilizing transfer learning with convolutional neural networks. Physical and engineering sciences in medicine, 43, 635-640.
 \end{thebibliography}
