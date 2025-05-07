@@ -356,7 +356,7 @@ In this section, we analyse how our COVID-19 classifier makes decisions. We will
 We will generate heatmap overlays on test images using the Grad-CAM technique. This way, we will be able to see which regions of the lungs are of more importance to the classifier than others. We hope to see highlights in COVID-relevant regions, as this would mean our model accually learned to detect COVID-19 as opposed to relying on cheats or artifacts. Furthermore, we hope to see a difference in activation patterns when comparing normal and affected lungs during our analysis.
 
 \subsection{Grad-CAM implementation}
-To realise a Grad-CAM implementation, we mostly follow the Keras tutorial \cite{keras_gradcam} (!!!reference), adjusted for binary classification.
+To realise a Grad-CAM implementation, we mostly follow the Keras tutorial, adjusted for binary classification.
 
 \vspace{0.5cm} We use the pre-trained model from Task 2 (the baseline model), as it has delivered us the best test performances. The model's architecture overview can be found in Table~\ref{table:baseline_cnn_overview}. 
 
