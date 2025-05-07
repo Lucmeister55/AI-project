@@ -434,4 +434,264 @@ LaTeX Warning: Reference `fig:downsample' on page 1 undefined on input line 65.
 File: Images/downsample.png Graphic file (type png)
 <use Images/downsample.png>
 Package pdftex.def Info: Images/downsample.png  used on input line 68.
-(pdftex.def)             Requested size: 
+(pdftex.def)             Requested size: 252.0pt x 133.09676pt.
+
+
+LaTeX Warning: Reference `fig:augmentation' on page 2 undefined on input line 76.
+
+<Images/augmentation.png, id=13, 911.65594pt x 625.58719pt>
+File: Images/augmentation.png Graphic file (type png)
+<use Images/augmentation.png>
+Package pdftex.def Info: Images/augmentation.png  used on input line 79.
+(pdftex.def)             Requested size: 252.0pt x 172.91998pt.
+
+
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 97.
+(C:\Users\Carlo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
+
+
+LaTeX Warning: Reference `table:baseline_cnn_overview' on page 2 undefined on input line 103.
+
+
+
+[2 <./Images/pixel_statistics.png> <./Images/downsample.png> <./Images/augmentation.png>]
+
+LaTeX Warning: Reference `fig:baseline_curves' on page 3 undefined on input line 137.
+
+<Images/baseline_curves.png, id=22, 1011.78pt x 578.16pt>
+File: Images/baseline_curves.png Graphic file (type png)
+<use Images/baseline_curves.png>
+Package pdftex.def Info: Images/baseline_curves.png  used on input line 140.
+(pdftex.def)             Requested size: 252.0pt x 144.0015pt.
+
+LaTeX Warning: Reference `table:hp_results' on page 3 undefined on input line 155.
+
+
+
+
+LaTeX Warning: Reference `fig:conf_matrix' on page 3 undefined on input line 198.
+
+<Images/confusion_matrix_baseline.png, id=23, 433.62pt x 361.35pt>
+File: Images/confusion_matrix_baseline.png Graphic file (type png)
+<use Images/confusion_matrix_baseline.png>
+Package pdftex.def Info: Images/confusion_matrix_baseline.png  used on input line 201.
+(pdftex.def)             Requested size: 252.0pt x 210.00218pt.
+
+LaTeX Warning: Reference `fig:conf_matrix' on page 3 undefined on input line 207.
+
+
+
+[3 <./Images/baseline_curves.png> <./Images/confusion_matrix_baseline.png>]
+
+LaTeX Warning: Reference `fig:baseline_curves' on page 4 undefined on input line 221.
+
+
+Underfull \hbox (badness 1859) in paragraph at lines 225--226
+[]\OT1/ptm/m/n/10 In this task trans-fer learn-ing by us-ing a pre-trained
+ []
+
+
+LaTeX Warning: Reference `table:transfer_cnn_overview' on page 4 undefined on input line 240.
+
+
+
+
+LaTeX Warning: Reference `fig:transferlearning_1' on page 4 undefined on input line 272.
+
+<Images/Transferlearning_1.png, id=32, 1011.78pt x 578.16pt>
+File: Images/Transferlearning_1.png Graphic file (type png)
+<use Images/Transferlearning_1.png>
+Package pdftex.def Info: Images/Transferlearning_1.png  used on input line 275.
+(pdftex.def)             Requested size: 252.0pt x 144.0015pt.
+
+LaTeX Warning: Reference `fig:transferlearning_2' on page 4 undefined on input line 297.
+
+<Images/Transferlearning_2.png, id=33, 1011.78pt x 361.35pt>
+File: Images/Transferlearning_2.png Graphic file (type png)
+<use Images/Transferlearning_2.png>
+Package pdftex.def Info: Images/Transferlearning_2.png  used on input line 300.
+(pdftex.def)             Requested size: 252.0pt x 90.00093pt.
+
+
+[4 <./Images/Transferlearning_1.png>]
+
+LaTeX Warning: Reference `fig:transferlearning_3' on page 5 undefined on input line 318.
+
+<Images/Transferlearning_3.png, id=39, 433.62pt x 361.35pt>
+File: Images/Transferlearning_3.png Graphic file (type png)
+<use Images/Transferlearning_3.png>
+Package pdftex.def Info: Images/Transferlearning_3.png  used on input line 321.
+(pdftex.def)             Requested size: 252.0pt x 210.00218pt.
+
+LaTeX Warning: Reference `fig:transferlearning_4' on page 5 undefined on input line 326.
+
+<Images/Transferlearning_4.png, id=40, 698.61pt x 385.44pt>
+File: Images/Transferlearning_4.png Graphic file (type png)
+<use Images/Transferlearning_4.png>
+Package pdftex.def Info: Images/Transferlearning_4.png  used on input line 329.
+(pdftex.def)             Requested size: 252.0pt x 139.03471pt.
+
+LaTeX Warning: Reference `fig:transferlearning_3' on page 5 undefined on input line 335.
+
+
+
+
+
+[5 <./Images/Transferlearning_2.png> <./Images/Transferlearning_3.png> <./Images/Transferlearning_4.png>]
+
+LaTeX Warning: Citation `keras_gradcam' on page 6 undefined on input line 359.
+
+
+LaTeX Warning: Reference `table:baseline_cnn_overview' on page 6 undefined on input line 361.
+
+
+LaTeX Warning: Reference `fig:gradcam' on page 6 undefined on input line 371.
+
+<Images/gradcam_test_image.png, id=47, 462.528pt x 346.896pt>
+File: Images/gradcam_test_image.png Graphic file (type png)
+<use Images/gradcam_test_image.png>
+Package pdftex.def Info: Images/gradcam_test_image.png  used on input line 376.
+(pdftex.def)             Requested size: 252.0pt x 189.00427pt.
+
+
+<Images/gradcam_true_neg.png, id=48, 462.528pt x 346.896pt>
+File: Images/gradcam_true_neg.png Graphic file (type png)
+<use Images/gradcam_true_neg.png>
+Package pdftex.def Info: Images/gradcam_true_neg.png  used on input line 397.
+(pdftex.def)             Requested size: 55.4403pt x 41.57808pt.
+<Images/gradcam_true_pos.png, id=49, 462.528pt x 346.896pt>
+File: Images/gradcam_true_pos.png Graphic file (type png)
+<use Images/gradcam_true_pos.png>
+Package pdftex.def Info: Images/gradcam_true_pos.png  used on input line 403.
+(pdftex.def)             Requested size: 55.4403pt x 41.57808pt.
+<Images/gradcam_false_pos.png, id=50, 462.528pt x 346.896pt>
+File: Images/gradcam_false_pos.png Graphic file (type png)
+<use Images/gradcam_false_pos.png>
+Package pdftex.def Info: Images/gradcam_false_pos.png  used on input line 409.
+(pdftex.def)             Requested size: 55.4403pt x 41.57808pt.
+<Images/gradcam_false_neg.png, id=51, 462.528pt x 346.896pt>
+File: Images/gradcam_false_neg.png Graphic file (type png)
+<use Images/gradcam_false_neg.png>
+Package pdftex.def Info: Images/gradcam_false_neg.png  used on input line 415.
+(pdftex.def)             Requested size: 55.4403pt x 41.57808pt.
+
+LaTeX Warning: Reference `fig:gradcam_groups' on page 6 undefined on input line 424.
+
+
+LaTeX Warning: Reference `sub@fig:true_neg' on page 6 undefined on input line 426.
+
+
+LaTeX Warning: Reference `sub@fig:true_pos' on page 6 undefined on input line 426.
+
+
+LaTeX Warning: Reference `sub@fig:false_pos' on page 6 undefined on input line 428.
+
+
+LaTeX Warning: Reference `sub@fig:false_neg' on page 6 undefined on input line 428.
+
+
+
+[6 <./Images/gradcam_test_image.png> <./Images/gradcam_true_neg.png> <./Images/gradcam_true_pos.png> <./Images/gradcam_false_pos.png> <./Images/gradcam_false_neg.png>]
+Underfull \hbox (badness 1622) in paragraph at lines 435--436
+[]\OT1/ptm/m/n/10 In well[]trained cases, the heatmaps tend to light up
+ []
+
+
+
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 460.
+(C:\Users\Carlo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+
+c:/Users/Carlo/Documents/2024-2025/SEMESTER_2/Artificial Intelligence/AI-project/AI-project/report/Report_group25.tex:461: LaTeX Error: Unicode character   (U+202F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.461 ...e every float in the text (e.g., "Fig. 
+                                                  X" or "Table Y") and rel...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+c:/Users/Carlo/Documents/2024-2025/SEMESTER_2/Artificial Intelligence/AI-project/AI-project/report/Report_group25.tex:461: LaTeX Error: Unicode character   (U+202F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.461 ...n the text (e.g., "Fig. X" or "Table 
+                                                  Y") and rely on the class�...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--462
+ \OT1/ptm/m/it/10 a) Po-si-tion-ing Fig-ures and Ta-bles: [][] \OT1/ptm/m/n/10 All fig-ures
+ []
+
+
+Underfull \hbox (badness 4366) in paragraph at lines 460--462
+\OT1/ptm/m/n/10 and ta-bles are in-serted us-ing the place-ment spec-i-fier
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--462
+[][]\OT1/pcr/m/n/10 \includegraphics[width=\linewidth]{...}[]\OT1/ptm/m/n/10 ,
+ []
+
+Excluding 'comment' comment.
+
+[7]
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+
+
+
+
+[8
+
+] (Report_group25.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-04-14>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 7220 strings out of 469941
+ 124208 string characters out of 5469431
+ 528387 words of memory out of 5000000
+ 33924 multiletter control sequences out of 15000+600000
+ 669191 words of font info for 132 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 86i,11n,131p,1075b,531s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Report_group25.pdf (8 pages, 2562520 bytes).
+PDF statistics:
+ 115 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+

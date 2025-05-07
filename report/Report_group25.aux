@@ -1,0 +1,81 @@
+\relax 
+\citation{b1,b2}
+\providecommand \oddpage@label [2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {II}Task 1: Data Exploration, Pre-Processing and Augmentation}{1}{}\protected@file@percent }
+\newlabel{sec:task_1}{{II}{1}{}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Loading the data}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Data exploration}{1}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A few images from the training dataset with accompanying labels.}}{1}{}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:example_images}{{1}{1}{}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Pre-processing}{1}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces A visualization of the average image (left) and a variation heatmap (right) with accompanying global statistics from the training dataset.}}{2}{}\protected@file@percent }
+\newlabel{fig:pixel_statistics}{{2}{2}{}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces An example of a downsampled image using bilinear interpolation (299x299 -> 128x128).}}{2}{}\protected@file@percent }
+\newlabel{fig:downsample}{{3}{2}{}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-D}}Augmentation}{2}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Examples of different transformations as well as the combination of them together.}}{2}{}\protected@file@percent }
+\newlabel{fig:augmentation}{{4}{2}{}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-E}}Pipeline}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {III}Task 2: Building the Baseline Model}{2}{}\protected@file@percent }
+\newlabel{sec:task_2}{{III}{2}{}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Initial Model Architecture}{2}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Initial Baseline CNN Architecture Overview.}}{3}{}\protected@file@percent }
+\newlabel{table:baseline_cnn_overview}{{I}{3}{}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Training Procedure}{3}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Training and validation accuracy and loss for the baseline CNN over 30 epochs.}}{3}{}\protected@file@percent }
+\newlabel{fig:baseline_curves}{{5}{3}{}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Hyperparameter Tuning}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Final Baseline Model}{3}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Hyperparameter Tuning Results (sorted by validation accuracy).}}{3}{}\protected@file@percent }
+\newlabel{table:hp_results}{{II}{3}{}{table.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Confusion matrix of the final baseline model on the test set (1: NORMAL, 0: COVID).}}{3}{}\protected@file@percent }
+\newlabel{fig:conf_matrix}{{6}{3}{}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-E}}Discussion}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Task 3: Transfer Learning}{4}{}\protected@file@percent }
+\newlabel{sec:task_3}{{IV}{4}{}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Setup of the base model}{4}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Initial Transfer Model Architecture}}{4}{}\protected@file@percent }
+\newlabel{table:transfer_cnn_overview}{{III}{4}{}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Training procedure}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Training and validation accuracy and loss for the initial transfer learning model over 30 epochs.}}{4}{}\protected@file@percent }
+\newlabel{fig:transferlearning_1}{{7}{4}{}{figure.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Hyperparameter tuning}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Final transfer learning model}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Training accuracy and loss for the final transfer learning model over 2 epochs.}}{5}{}\protected@file@percent }
+\newlabel{fig:transferlearning_2}{{8}{5}{}{figure.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-E}}Fine-tuning}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Confusion matrix for the fine-tuned transfer learning model (1: NORMAL, 0: COVID).}}{5}{}\protected@file@percent }
+\newlabel{fig:transferlearning_3}{{9}{5}{}{figure.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-F}}Discussion}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Test Samples with and without pre-processing and there labels.}}{5}{}\protected@file@percent }
+\newlabel{fig:transferlearning_4}{{10}{5}{}{figure.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Task 4: Explainability through Grad-CAM}{5}{}\protected@file@percent }
+\newlabel{sec:task_4}{{V}{5}{}{section.5}{}}
+\citation{keras_gradcam}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Grad-CAM implementation}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Explaining the decision with Grad-CAM}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Grad-CAM of the test image.}}{6}{}\protected@file@percent }
+\newlabel{fig:gradcam_test_image}{{11}{6}{}{figure.11}{}}
+\newlabel{fig:true_neg}{{12a}{6}{}{subfigure.12.1}{}}
+\newlabel{sub@fig:true_neg}{{a}{6}{}{subfigure.12.1}{}}
+\newlabel{fig:true_pos}{{12b}{6}{}{subfigure.12.2}{}}
+\newlabel{sub@fig:true_pos}{{b}{6}{}{subfigure.12.2}{}}
+\newlabel{fig:false_pos}{{12c}{6}{}{subfigure.12.3}{}}
+\newlabel{sub@fig:false_pos}{{c}{6}{}{subfigure.12.3}{}}
+\newlabel{fig:false_neg}{{12d}{6}{}{subfigure.12.4}{}}
+\newlabel{sub@fig:false_neg}{{d}{6}{}{subfigure.12.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Grad-CAM visualizations per classification group.}}{6}{}\protected@file@percent }
+\newlabel{fig:gradcam_groups}{{12}{6}{}{figure.12}{}}
+\bibcite{b1}{1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Discussion}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusions}{7}{}\protected@file@percent }
+\newlabel{sec:conclusions}{{VI}{7}{}{section.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Author contributions and collaboration}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Use of Generative AI}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-A}}Figures and Tables}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {VIII-A}0a}Positioning Figures and Tables}{7}{}\protected@file@percent }
+\bibcite{b2}{2}
+\@writefile{toc}{\contentsline {section}{References}{8}{}\protected@file@percent }
+\gdef \@abspage@last{8}
