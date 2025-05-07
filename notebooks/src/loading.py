@@ -43,7 +43,17 @@ def _extract_classes(data_gen):
 
 def get_images(
     path, img_height, img_width, batch_size, norm=None, color_mode="grayscale"
-):
+):  
+    def add_file_paths(dataset, directory):
+        """Attach file paths to the dataset."""
+        file_paths = []
+        for subdir in pathlib.Path(directory).iterdir():
+            if subdir.is_dir():
+                file_paths.extend(str(p) for p in subdir.iterdir() if p.is_file())
+        file_paths = sorted(file_paths)  # Ensure consistent ordering
+        dataset.file_paths = file_paths
+        return dataset
+    
     train_data_gen = tf.keras.utils.image_dataset_from_directory(
         directory=path + "/train",
         label_mode="binary",
@@ -76,6 +86,12 @@ def get_images(
         shuffle=False,
         color_mode=color_mode,
     )
+
+    # Attach file paths to each dataset
+    train_data_gen = add_file_paths(train_data_gen, path + "/train")
+    val_data_gen = add_file_paths(val_data_gen, path + "/val")
+    train_and_val_data_gen = add_file_paths(train_and_val_data_gen, path + "/train_and_val")
+    test_data_gen = add_file_paths(test_data_gen, path + "/test")
 
     if norm is not None:
         # Compute training mean and std
