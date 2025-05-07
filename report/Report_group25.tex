@@ -64,7 +64,7 @@
 
 The outbreak of the COVID-19 pandemic in late 2019 has placed unprecedented strain on healthcare systems worldwide, highlighting the urgent need for rapid and accurate diagnostic tools to support clinical decision–making. Chest X‑ray imaging has emerged as a widely available modality for the preliminary screening of COVID‑19 pneumonia, yet visual assessment alone can be time‑consuming and prone to inter‑observer variability~\cite{b1,b2}. In this work, a deep learning–based framework for assisted diagnosis of COVID‑19 from chest X‑ray images is presented, leveraging both custom convolutional neural networks and transfer learning approaches.
 
-Section~\ref{sec:task_1} covers exploring the publicly available dataset, detailing the preprocessing pipeline (downsampling, normalization, and light augmentation) and presenting initial sample images (Fig.~\ref{fig:example_images}). In Section~\ref{sec:task_2}, a baseline CNN model is build and evaluated, reporting its architecture (Table~\ref{table:cnn_overview}), learning curves (Fig.~\ref{fig:baseline_curves}), and test‑set performance including a confusion matrix (Fig.~\ref{fig:conf_matrix}). Section~\ref{sec:task_3} introduces transfer learning with a pre‑trained ResNet50V2 backbone, describing model adaptations, hyperparameter tuning, and comparative results. Section~\ref{sec:task_4} demonstrates model interpretability using Grad‑CAM heatmaps, and finally Section~\ref{sec:conclusions} summarizes the conclusions and outlines potential future work.
+Section~\ref{sec:task_1} covers exploring the publicly available dataset, detailing the preprocessing pipeline (downsampling, normalization, and light augmentation) and presenting initial sample images (Fig.~\ref{fig:example_images}). In Section~\ref{sec:task_2}, a baseline CNN model is build and evaluated, reporting its architecture (Table~\ref{table:baseline_cnn_overview}), learning curves (Fig.~\ref{line_curves}), and test‑set performance including a confusion matrix (Fig.~\ref{fig:conf_matrix}). Section~\ref{sec:task_3} introduces transfer learning with a pre‑trained ResNet50V2 backbone, describing model adaptations, hyperparameter tuning, and comparative results. Section~\ref{sec:task_4} demonstrates model interpretability using Grad‑CAM heatmaps, and finally Section~\ref{sec:conclusions} summarizes the conclusions and outlines potential future work.
 
 \section{Task 1: Data Exploration, Pre-Processing and Augmentation}\label{sec:task_1}
 
@@ -137,11 +137,11 @@ A custom CNN with the following components is implemented:
 	\item \textbf{Output layer}: single unit with sigmoid activation for binary classification
 \end{itemize}
 
-The model uses the Adam optimizer with a learning rate of $10^{-3}$ and binary cross-entropy loss. Accuracy was chosen as the primary metric. A summary of the full architecture is shown in Table~\ref{table:cnn_overview}.
+The model uses the Adam optimizer with a learning rate of $10^{-3}$ and binary cross-entropy loss. Accuracy was chosen as the primary metric. A summary of the full architecture is shown in Table~\ref{table:baseline_cnn_overview}.
 
 \begin{table}[htbp]
 	\caption{Initial Baseline CNN Architecture Overview.}
-	\label{table:cnn_overview}
+	\label{table:baseline_cnn_overview}
 	\centering
 	\begin{adjustbox}{width=0.48\textwidth}
 		\begin{tabular}{|l|l|r|}
@@ -192,7 +192,7 @@ A grid search was performed over the following hyperparameters:
 	\item Dense units: \{256, 512\}
 \end{itemize}
 
-Early stopping restored the best weights. The best configuration achieved a validation accuracy of \textbf{0.8958} with a dropout rate of \textbf{0.1}, \textbf{16} filters, a learning rate of \(\mathbf{5\times10^{-4}}\), and \textbf{256} dense units. All results are shown in Table~\ref{table:hp_results}.
+Early stopping restored the best weights. The best configuration achieved a validation accuracy of \textbf{0.8932} with a dropout rate of \textbf{0.2}, \textbf{8} filters, a learning rate of \(\mathbf{10^{-3}}\), and \textbf{512} dense units. All results are shown in Table~\ref{table:hp_results}.
 
 \begin{table}[htbp]
 	\caption{Hyperparameter Tuning Results (sorted by validation accuracy).}
@@ -205,69 +205,76 @@ Early stopping restored the best weights. The best configuration achieved a vali
 			& & & \textbf{Units} & & & \\
 			\hline
 			\rowcolor{yellow}
-			\bfseries 0.1 & \bfseries 16 & \bfseries 5e‑4 & \bfseries 256 & \bfseries 0.8958 & \bfseries 11 & \bfseries 0.3090 \\
-			0.1 & 8  & 1e‑3 & 512 & 0.8958 &  5 & 0.2937 \\
-			0.2 & 16 & 1e‑3 & 512 & 0.8880 &  4 & 0.3031 \\
-			0.1 & 16 & 1e‑3 & 512 & 0.8828 &  6 & 0.2919 \\
-			0.2 & 16 & 5e‑4 & 256 & 0.8828 &  8 & 0.3199 \\
-			0.1 & 16 & 5e‑4 & 512 & 0.8724 &  5 & 0.3057 \\
-			0.1 & 8  & 5e‑4 & 256 & 0.8724 &  5 & 0.2813 \\
-			0.1 & 8  & 5e‑4 & 512 & 0.8724 &  7 & 0.3119 \\
-			0.2 & 8  & 5e‑4 & 512 & 0.8698 &  8 & 0.3170 \\
-			0.1 & 8  & 1e‑3 & 256 & 0.8672 &  5 & 0.3261 \\
-			0.2 & 16 & 1e‑3 & 256 & 0.8672 &  8 & 0.3626 \\
-			0.2 & 16 & 5e‑4 & 512 & 0.8672 & 10 & 0.3336 \\
-			0.2 & 8  & 1e‑3 & 256 & 0.8646 &  6 & 0.3521 \\
-			0.2 & 8  & 5e‑4 & 256 & 0.8594 & 11 & 0.3652 \\
-			0.1 & 16 & 1e‑3 & 256 & 0.8385 &  6 & 0.3685 \\
-			0.2 & 8  & 1e‑3 & 512 & 0.8385 &  6 & 0.3605 \\
+			\bfseries 0.2 & \bfseries 8  & \bfseries 1e-3 & \bfseries 512 & \bfseries 0.8932 & \bfseries 9  & \bfseries 0.2984 \\
+			0.2           & 16           & 1e-3            & 256           & 0.8906           & 7            & 0.2998           \\
+			0.1           & 16           & 5e-4            & 512           & 0.8828           & 6            & 0.2970           \\
+			0.1           & 8            & 1e-3            & 512           & 0.8828           & 12           & 0.3483           \\
+			0.1           & 8            & 1e-3            & 256           & 0.8776           & 8            & 0.3139           \\
+			0.1           & 16           & 1e-3            & 512           & 0.8724           & 5            & 0.3096           \\
+			0.2           & 16           & 5e-4            & 256           & 0.8698           & 9            & 0.3422           \\
+			0.2           & 8            & 5e-4            & 512           & 0.8698           & 10           & 0.2969           \\
+			0.2           & 16           & 5e-4            & 512           & 0.8672           & 4            & 0.3052           \\
+			0.1           & 8            & 5e-4            & 512           & 0.8646           & 12           & 0.3483           \\
+			0.2           & 16           & 1e-3            & 512           & 0.8646           & 6            & 0.3223           \\
+			0.1           & 16           & 1e-3            & 256           & 0.8620           & 4            & 0.3276           \\
+			0.2           & 8            & 5e-4            & 256           & 0.8620           & 8            & 0.3166           \\
+			0.1           & 8            & 5e-4            & 256           & 0.8594           & 8            & 0.3343           \\
+			0.2           & 8            & 1e-3            & 256           & 0.8464           & 5            & 0.3387           \\
+			0.1           & 16           & 5e-4            & 256           & 0.8385           & 5            & 0.3608           \\
 			\hline
 		\end{tabular}
 	\end{adjustbox}
 \end{table}
 
+
 \subsection{Final Baseline Model}
 Using the best hyperparameters, the model was retrained on the full training set (2,000 images) for 8 epochs. Evaluation on the held-out test set (200 images) yielded:
 \begin{itemize}
-	\item Test accuracy: 0.8900
-	\item Test loss: 0.2772
+	\item Test accuracy: 0.8300
+	\item Test loss: 0.3835
 \end{itemize}
 
 The confusion matrix is shown in Fig.~\ref{fig:conf_matrix}.
 
 \begin{figure}[htbp]
-	\centerline{\includegraphics[width=0.7\linewidth]{Images/confusion_matrix_baseline.png}}
-	\caption{Confusion matrix of the final baseline model on the test set.}
+	\centerline{\includegraphics[width=\linewidth]{Images/confusion_matrix_baseline.png}}
+	\caption{Confusion matrix of the final baseline model on the test set (1: NORMAL, 0:COVID).}
 	\label{fig:conf_matrix}
 \end{figure}
 
 \subsection{Discussion}
-The baseline model achieved 89\% accuracy, demonstrating strong discriminative power between COVID-19 and normal chest X-ray images. The following is observed from the confusion matrix (Fig.~\ref{fig:conf_matrix}):
+The baseline model achieved 83\% accuracy, demonstrating strong discriminative power between COVID-19 and normal chest X-ray images. The following is observed from the confusion matrix (Fig.~\ref{fig:conf_matrix}):
 
 \begin{itemize}
-	\item True negatives (NORMAL correctly classified): 85
-	\item False positives (NORMAL misclassified as COVID): 15
-	\item False negatives (COVID misclassified as NORMAL): 7
-	\item True positives (COVID correctly classified): 93
+	\item True negatives (NORMAL correctly classified): 88
+	\item False positives (NORMAL misclassified as COVID): 12
+	\item False negatives (COVID misclassified as NORMAL): 22
+	\item True positives (COVID correctly classified): 78
 \end{itemize}
 
-This yields a sensitivity (recall for COVID) of $93/(93+7)=0.93$ and a specificity of $85/(85+15)=0.85$. The slightly higher sensitivity indicates that the model is more likely to correctly detect COVID cases, at the cost of some false alarms.  
+This yields a sensitivity (recall for COVID) of $78/(78+22)=0.78$ and a specificity of $88/(88+12)=0.88$. The slightly higher sensitivity indicates that the model is more likely to correctly detect COVID cases, at the cost of some false alarms.  
+
+In our final training run—conducted without a separate validation split—we noted that training loss continued to decline predictably with each epoch. However, without a validation curve to signal overfitting, determining the optimal early‑stopping point became speculative. In future work, reintroducing a validation set or implementing cross‑validation will be essential to choose the right number of epochs.
 
 The training curves, shown in Fig.~\ref{fig:baseline_curves}, suggest rapid convergence of training accuracy to nearly 100\% within the first 10 epochs, while validation accuracy plateaus around 88\%, suggesting that there is still some overfitting, even after controlling via dropout. Overall, the baseline CNN provides a solid starting point.
 
 
 
 
+
+
 \section{Task 3: Transfer Learning} \label{sec:task_3}
 In this task we will apply transfer learning by using a pre-trained ResNet50V2 model trained on Imagenet. This model has been trained on a large dataset images. We will use this model as a starting point for our own model. Transfer learning is a powerful machine learning technique for leveraging knowledge learned
-from one task and applying it to a new task. This is especially useful when you have limited training data. \\
+from one task and applying it to a new task. This is especially useful when you have limited training data.\\
 
-The typical workflow for transfer learning is as follows: \\
-1.Starting with a pretrained model\\
-2.Freeze the layers of the pretrained model\\
-3.Add new trainablelayers to the pretrained model\\
-4.Training on the dataset\\
-5.Fine-tuning (optional)\\
+The typical workflow for transfer learning is as follows:
+\begin{enumerate}
+	\item Starting with a pretrained model
+	\item Freeze the layers of the pretrained model
+	\item Add new trainablelayers to the pretrained model
+	\item Training on the dataset
+	\item Fine-tuning (optional)
+\end{enumerate}
 
 We freeze the layers of the pretrained model to prevent information learned from the initial task from being overwritten during the new training process.Then new layers are added to the pretrained model to adapt it to the new task. And then we train the model and fine-tune it.\\
 
@@ -278,7 +285,7 @@ New layers are added to the model. We added 2 Dense layers.\\
 
 \begin{table}[htbp]
 	\caption{Initial Transfer Model Architecture}
-	\label{table:cnn_overview}
+	\label{table:transfer_cnn_overview}
 	\centering
 	\begin{adjustbox}{width=0.48\textwidth}
 		\begin{tabular}{|l|l|r|}
@@ -311,19 +318,18 @@ We also have a augmentation layer. We use RandomBrightness, RandomContrast and R
 
 \subsection{Train the model}
 
-We train the model using the best hyperparameters found while optimizing the
+We train the model using the best meters found while optimizing the
 baseline. We use the training and validation data together as training data. 
 (See III Task 2, paragraph C.)\\
 
 
 
-Here are the plots we get from training the model for trainingset for thirty epochs while holding out the
-validation set to monitor its performance.\\
+Here are the plots we get from training the model for training set for thirty epochs while holding out the validation set to monitor its performance.\\
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=\linewidth]{Images/Transferlearning_1.png}}
 	\caption{Training and validation accuracy and loss for the base model over 30 epochs.}
-	\label{fig:baseline_curves}
+	\label{fig:transferlearning_1}
 \end{figure}
 
 The model runs without errors and the loss decreases more or less smoothly. The accuracy is very poor. We have tried a lot of configurations and different augmentation factors but we had a lot of overfitting. We try to avoid this by choosing the right layers, parameters and the right augmentation and this was the result.\\
@@ -350,7 +356,7 @@ By doing this we get the following plots which represent the training accuracy a
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=\linewidth]{Images/Transferlearning_2.png}}
 	\caption{Training and validation accuracy and loss for the pre-trained model}
-	\label{fig:baseline_curves}
+	\label{fig:transferlearning_2}
 \end{figure}
 
 The accuracy increases and the loss decreases.
@@ -363,19 +369,19 @@ We display the confusion matrix.
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=\linewidth]{Images/Transferlearning_3.png}}
 	\caption{Confusion matrix for the final model}
-	\label{fig:baseline_curves}
+	\label{fig:transferlearning_3}
 \end{figure}
 
 The confusion matrix shows:\\
 
 \begin{itemize}
-	\item True negatives (NORMAL correctly classified): 41
-	\item False positives (NORMAL misclassified as COVID): 59
-	\item False negatives (COVID misclassified as NORMAL): 8
-	\item True positives (COVID correctly classified): 92
+	\item True negatives (NORMAL correctly classified): 84
+	\item False positives (NORMAL misclassified as COVID): 17
+	\item False negatives (COVID misclassified as NORMAL): 16
+	\item True positives (COVID correctly classified): 83
 \end{itemize}
 
-This yields a sensitivity (recall for COVID) of $92/(92+8)=0.92$ and a specificity of $41/(41+59)=0.41$. The much higher sensitivity indicates the model is more likely to correctly detect COVID cases, at the cost of a lot of false alarms. \\ 
+This yields a sensitivity (recall for COVID) of $83/(83+16)=0.8384$ and a specificity of $84/(84+17)=0.8317$. The much higher sensitivity indicates the model is more likely to correctly detect COVID cases, at the cost of a lot of false alarms. \\ 
 
 
 
@@ -384,7 +390,7 @@ Finally a few images are plotted from the test dataset. First without pre-proces
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=\linewidth]{Images/Transferlearning_4.png}}
 	\caption{Test Samples with and without pre-processing and there labels}
-	\label{fig:baseline_curves}
+	\label{fig:transferlearning_4}
 \end{figure}
 
 
@@ -407,7 +413,11 @@ To improve the effectiveness of transfer learning in this context, several modif
 
 \section{Task 4: Explainability through Grad-CAM} \label{sec:task_4}
 
-
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=\linewidth]{Images/gradcam.png}}
+	\caption{Grad CAM test image.}
+	\label{fig:gradcam}
+\end{figure}
 
 \section{Conclusions}\label{sec:conclusions}
 
