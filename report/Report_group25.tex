@@ -99,7 +99,7 @@ A custom CNN with the following components is implemented:
 \end{itemize}
 \vspace{0.5cm}
 
-The model uses the Adam optimizer with a learning rate of $10^{-3}$ and binary cross-entropy loss. Accuracy was chosen as the primary metric. A summary of the full architecture is shown in Table~\ref{table:baseline_cnn_overview}.
+A summary of the full architecture is shown in Table~\ref{table:baseline_cnn_overview}.
 
 \begin{table}[htbp]
 	\caption{Initial Baseline CNN Architecture Overview.}
@@ -131,14 +131,9 @@ The model uses the Adam optimizer with a learning rate of $10^{-3}$ and binary c
 \end{table}
 
 \subsection{Training Procedure}
-Training was conducted with the following settings:
-\begin{itemize}
-	\item Batch size: 32
-	\item Epochs: 30 (with early stopping patience of 2 on validation loss)
-\end{itemize}
-\vspace{0.5cm}
+The model is initially trained on batch sizes of 32 using a learning rate of $10^{-3}$ using the Adam optimizer on a binary cross-entropy loss function and accuracy as the metric of choice.
 
-The learning curves are depicted in Fig.~\ref{fig:baseline_curves}.
+The learning curves, spanning 30 epochs, are depicted in Fig.~\ref{fig:baseline_curves}.
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=\linewidth]{Images/baseline_curves.png}}
@@ -147,7 +142,7 @@ The learning curves are depicted in Fig.~\ref{fig:baseline_curves}.
 \end{figure}
 
 \subsection{Hyperparameter Tuning}
-A grid search was performed over the following hyperparameters:
+A grid search (with early stopping) was performed over the following hyperparameters:
 \begin{itemize}
 	\item Dropout rate: \{0.1, 0.2\}
 	\item Initial convolutional filters: \{8, 16\}
@@ -156,7 +151,7 @@ A grid search was performed over the following hyperparameters:
 \end{itemize}
 \vspace{0.5cm}
 
-Early stopping restored the best weights. The best configuration achieved a validation accuracy of \textbf{0.8932} with a dropout rate of \textbf{0.2}, \textbf{8} filters, a learning rate of \(\mathbf{10^{-3}}\), and \textbf{512} dense units. All results are shown in Table~\ref{table:hp_results}.
+The best configuration achieved a validation accuracy of \textbf{0.8932} with a dropout rate of \textbf{0.2}, \textbf{8} filters, a learning rate of \(\mathbf{10^{-3}}\), and \textbf{512} dense units. All results are shown in Table~\ref{table:hp_results}.
 
 \begin{table}[htbp]
 	\caption{Hyperparameter Tuning Results (sorted by validation accuracy).}
@@ -192,7 +187,7 @@ Early stopping restored the best weights. The best configuration achieved a vali
 
 
 \subsection{Final Baseline Model}
-Using the best hyperparameters, the model was retrained on the full training set (2,000 images) for 8 epochs. Evaluation on the held-out test set (200 images) yielded:
+Using the best hyperparameters, the model was retrained on the training and validation sets together (2,000 images) for 8 epochs. Evaluation on the held-out test set (200 images) yielded:
 \begin{itemize}
 	\item Test accuracy: 0.8300
 	\item Test loss: 0.3835
@@ -239,7 +234,7 @@ The typical workflow for transfer learning is as follows:
 
 The layers of the pretrained model are frozen to prevent elementary information learned from the initial task from being overwritten during the new training process. New layers are added to the pretrained model to adapt it to the new task, which need to be trained on new data. Optionally, the last layers of the original model can be unfrozen and retrained to fine-tune the model even more.
 
-\subsection{Setup the base model}
+\subsection{Setup of the base model}
 The base model (ResNet50V2) is instantiated with the "imagenet" pre-trained weights, not including the top layers. All the layers of the base model are frozen so their weights are not updated during the training process. Then, new fully connected layers are added to the model with dropout in between (Table~\ref{table:transfer_cnn_overview}).
 
 \begin{table}[htbp]
@@ -269,47 +264,42 @@ The base model (ResNet50V2) is instantiated with the "imagenet" pre-trained weig
 	\end{adjustbox}
 \end{table}
 
-\subsection{Train the model}
-The model is trained using the best hyperparameters found while tuning the baseline in the previous section, again using the Adam optimizer on a binary cross-entropy loss function.
+\subsection{Training procedure}
+The model is initially trained using the best hyperparameters found while tuning the baseline model in the previous section, again using the Adam optimizer on a binary cross-entropy loss function and accuracy as the metric of choice.
 
-Here are the plots we get from training the model for training set for thirty epochs while holding out the validation set to monitor its performance.
+The learning curves, spanning 30 epochs, are depicted in Fig.~\ref{fig:transferlearning_1}.
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=\linewidth]{Images/Transferlearning_1.png}}
-	\caption{Training and validation accuracy and loss for the base model over 30 epochs.}
+	\caption{Training and validation accuracy and loss for the initial transfer learning model over 30 epochs.}
 	\label{fig:transferlearning_1}
 \end{figure}
 
-The model runs without errors and the loss stabilizes. The accuracy is very poor. We have tried a lot of configurations and different augmentation factors but we had a lot of overfitting. We try to avoid this by choosing the right layers, parameters and the right augmentation and this was the result.\\
-
-
+The model trains without errors and the loss stabilizes somewhat but the results are clearly worse.
 
 \subsection{Hyperparameter tuning}
-Now we implement the EarlyStopping callback. While tuning a few parameters. We tune batch\_size, learning\_rate and dropout\_rate. We do this by conducting a rough parameter search.
+A grid search (with early stopping) was performed over the following hyperparameters:
 
-So we perform a grid search over the following hyperparameters:
 \begin{itemize}
 	\item Dropout rate: \{0.1, 0.2, 0.3\}
 	\item Learning rate: \{1e-3, 5e-4\}
 	\item Batch size: \{32, 64\}
 \end{itemize}
 
-The best configuration achieved a validation accuracy of \textbf{1.0000} with dropout rate \textbf{0.1}, learning rate \(\mathbf{1\times10^{-3}}\), batch size \textbf{64} at 22 epochs.
+The best configuration achieved a validation accuracy of \textbf{1.0000} with a dropout rate of \textbf{0.1}, a learning rate of \(\mathbf{1\times10^{-3}}\), and a batch size of \textbf{64}.
 
+\subsection{Final transfer learning model}
+Using the best hyperparameters, the model was retrained on the training and validation sets together (2000 images) for 2 epochs.
 
-\subsection{Train pre-trained model}
-Now we train the model using the best hyperparameters found while fine-tuning. We do this for 2 epochs.
-By doing this we get the following plots which represent the training accuracy and loss for the pre-trained model.
+the learning curves, spanning 2 epochs, are depicted in Fig.~\ref{fig:transferlearning_2}.
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=\linewidth]{Images/Transferlearning_2.png}}
-	\caption{Training and validation accuracy and loss for the pre-trained model}
+	\caption{Training accuracy and loss for the final transfer learning model over 2 epochs.}
 	\label{fig:transferlearning_2}
 \end{figure}
 
-The accuracy increases and the loss decreases.
-
-\subsection{Fine-tuning the entire model}
+\subsection{Fine-tuning}
 In this step all of the base model layers are unfrozen. The whole model is retrained end to end. We also use the training and validation data together for training data.\\
 
 After training the model, we evaluate it on the test data. We get the following results:\\
