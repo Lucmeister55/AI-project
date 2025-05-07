@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1746600675.04142 "c:/Users/wille/AI-project/report/Report_group25.tex" "Report_group25.pdf" "Report_group25" 1746600679.61651 2
+["pdflatex"] 1746603900.02567 "c:/Users/wille/AI-project/report/Report_group25.tex" "Report_group25.pdf" "Report_group25" 1746603904.54303 2
   "C:/Users/wille/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1746536816 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/wille/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1746456478 13157640 8e4f70c43cce1d8c21f2a198c86929df ""
   "C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -111,9 +111,9 @@
   "Images/example_images.png" 1746556979 341294 895375a2448ac713c496168ec6416623 ""
   "Images/gradcam.png" 1746600364 114506 b7d44c048518ab9a14b54e18f1e26848 ""
   "Images/pixel_statistics.png" 1746556979 141800 e5ffcda509327f681396ad8b90f3c850 ""
-  "Report_group25.aux" 1746600679 6700 97eb4e9dd2ce3136286883a0a91a609e "pdflatex"
-  "Report_group25.tex" 1746600660 30885 f6f95362bac37bc9164dd6b1bd839695 ""
-  "c:/Users/wille/AI-project/report/Report_group25.tex" 1746600660 30885 f6f95362bac37bc9164dd6b1bd839695 ""
+  "Report_group25.aux" 1746603904 6700 97eb4e9dd2ce3136286883a0a91a609e "pdflatex"
+  "Report_group25.tex" 1746603897 31294 3913d51c6fcf6349b40862ad5abad042 ""
+  "c:/Users/wille/AI-project/report/Report_group25.tex" 1746603897 31294 3913d51c6fcf6349b40862ad5abad042 ""
   (generated)
   "Report_group25.aux"
   "Report_group25.log"

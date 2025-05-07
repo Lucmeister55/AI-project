@@ -276,7 +276,7 @@ The typical workflow for transfer learning is as follows:
 	\item Fine-tuning (optional)
 \end{enumerate}
 
-We freeze the layers of the pretrained model to prevent information learned from the initial task from being overwritten during the new training process.Then new layers are added to the pretrained model to adapt it to the new task. And then we train the model and fine-tune it.\\
+We freeze the layers of the pretrained model to prevent information learned from the initial task from being overwritten during the new training process. Then new layers are added to the pretrained model to adapt it to the new task. And then we train the model and fine-tune it.\\
 
 \subsection{Setup the base model}
 We instantiate the base model with the "imagenet" pre-trained weights. We do not include the top layers. The model is ResNet50V2. We freeze al the layers of the base model so they are not updated during the training process.\\
@@ -308,13 +308,20 @@ New layers are added to the model. We added 2 Dense layers.\\
 			\hline
 		\end{tabular}
 	\end{adjustbox}
-\end{table}
+\end{table} \\
+
+
 
 Finally a dropout layer is added before the new layers. We add 2 more dropout layers between the dense layers.\\
-The Adam optimizer is used with a learning rate of .. and the loss function is binary cross-entropy.
-Now we compile the model and it's ready to train\\
+The Adam optimizer is used with a learning rate of 0.0005 and the loss function is binary cross-entropy.
+Now we compile the model and it's ready to train.\\
+In TABLE III we show the architecture of the model.\\
 
-We also have a augmentation layer. We use RandomBrightness, RandomContrast and RandomRotation to augment the images and prevent overfitting.
+
+
+
+
+We also added a augmentation layer. RandomBrightness, RandomContrast and RandomRotation are used to augment the images and prevent overfitting.\\
 
 \subsection{Train the model}
 
@@ -332,7 +339,7 @@ Here are the plots we get from training the model for training set for thirty ep
 	\label{fig:transferlearning_1}
 \end{figure}
 
-The model runs without errors and the loss decreases more or less smoothly. The accuracy is very poor. We have tried a lot of configurations and different augmentation factors but we had a lot of overfitting. We try to avoid this by choosing the right layers, parameters and the right augmentation and this was the result.\\
+The model runs without errors and the loss stabilizes. The accuracy is very poor. We have tried a lot of configurations and different augmentation factors but we had a lot of overfitting. We try to avoid this by choosing the right layers, parameters and the right augmentation and this was the result.\\
 
 
 
@@ -346,12 +353,12 @@ So we perform a grid search over the following hyperparameters:
 	\item Batch size: \{32, 64\}
 \end{itemize}
 
-The best configuration achieved a validation accuracy of \textbf{1.0000} with dropout rate \textbf{0.1}, learning rate \(\mathbf{1\times10^{-3}}\), batch size \textbf{64} and 2 epochs.
+The best configuration achieved a validation accuracy of \textbf{1.0000} with dropout rate \textbf{0.1}, learning rate \(\mathbf{1\times10^{-3}}\), batch size \textbf{64} at 22 epochs.
 
 
 \subsection{Train pre-trained model}
 Now we train the model using the best hyperparameters found while fine-tuning. We do this for 2 epochs.
-By doing this we get the following plots which represent the training accuracy and loss for the pre-trained model over ... epochs.
+By doing this we get the following plots which represent the training accuracy and loss for the pre-trained model.
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=\linewidth]{Images/Transferlearning_2.png}}
@@ -364,7 +371,16 @@ The accuracy increases and the loss decreases.
 \subsection{Fine-tuning the entire model}
 In this step all of the base model layers are unfrozen. The whole model is retrained end to end. We also use the training and validation data together for training data.\\
 
-We display the confusion matrix.
+After training the model, we evaluate it on the test data. We get the following results:\\
+
+\begin{itemize}
+	\item Accuracy: 83,5\%
+	\item Loss: 0.6901
+\end{itemize}
+
+The model clearly performs better than the pre-trained model. It was expected because the basemodel was trained on images already and now it is trainable and it will fit better for our data.\\
+
+We display the confusion matrix in Fig 9. .
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=\linewidth]{Images/Transferlearning_3.png}}
@@ -381,11 +397,11 @@ The confusion matrix shows:\\
 	\item True positives (COVID correctly classified): 83
 \end{itemize}
 
-This yields a sensitivity (recall for COVID) of $83/(83+16)=0.8384$ and a specificity of $84/(84+17)=0.8317$. The much higher sensitivity indicates the model is more likely to correctly detect COVID cases, at the cost of a lot of false alarms. \\ 
+This yields a sensitivity (recall for COVID) of $83/(83+17)=0.83$ and a specificity of $84/(84+16)=0.84$. Overall, the model performs reasonably well but could still benefit from reducing false positives and false negatives. \\ 
 
 
 
-Finally a few images are plotted from the test dataset. First without pre-processing, second with their evaluations after pre-processing.\\	
+Finally a few images are plotted from the test dataset in Fig10. . First without pre-processing, second with their evaluations after pre-processing.\\	
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=\linewidth]{Images/Transferlearning_4.png}}
@@ -397,10 +413,10 @@ Finally a few images are plotted from the test dataset. First without pre-proces
 \subsection{Conclusion}
 For the architecture of the final layers added to the pretrained model, we used the same layers as in the previous model.\\
 
-When examining the training curve of the pretrained model, we observed that it achieved a much lower accuracy compared to the final baseline model. Although the loss curve followed a similar downward trend, it did not reach the same small values as that of the baseline model.\\
+When examining the training curve of the pretrained model, we observed that it achieved a much lower accuracy compared to the final baseline model. The loss curve stabilizes but does not increase, it did not reach the same small values as that of the baseline model.\\
 
 However, when evaluating performance on the test set, we found that the final model did improve upon the pretrained model in terms of accuracy, and this was achieved without lowering the learning rate.\\
-That said, the fine-tuned model actually performed worse than the baseline, dropping in accuracy from 89\% to 76\%.\\
+That said, the fine-tuned model actually performed worse than the baseline, dropping in accuracy from 89\% to 83,5\%.\\
 
 From this experience, we conclude that transfer learning has both advantages and disadvantages. On the positive side, training was faster given the same amount of data. On the negative side, the base model and its pretrained weights may not have been well-suited for the task at hand, making fine-tuning a delicate and challenging process.\\
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.5)  7 MAY 2025 08:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.5)  7 MAY 2025 09:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -492,29 +492,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--285
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 313--316
+c:/Users/wille/AI-project/report/Report_group25.tex:312: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.312 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 315--319
 
  []
 
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--324
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--328
+Underfull \hbox (badness 10000) in paragraph at lines 328--331
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--335
 
  []
 
 <Images/Transferlearning_1.png, id=33, 1011.78pt x 578.16pt>
 File: Images/Transferlearning_1.png Graphic file (type png)
 <use Images/Transferlearning_1.png>
-Package pdftex.def Info: Images/Transferlearning_1.png  used on input line 330.
+Package pdftex.def Info: Images/Transferlearning_1.png  used on input line 337.
 (pdftex.def)             Requested size: 252.0pt x 144.0015pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
 
  []
 
@@ -524,63 +542,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 335--336
 <Images/Transferlearning_2.png, id=38, 1011.78pt x 361.35pt>
 File: Images/Transferlearning_2.png Graphic file (type png)
 <use Images/Transferlearning_2.png>
-Package pdftex.def Info: Images/Transferlearning_2.png  used on input line 357.
+Package pdftex.def Info: Images/Transferlearning_2.png  used on input line 364.
 (pdftex.def)             Requested size: 252.0pt x 90.00093pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--366
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
 
  []
 
 <Images/Transferlearning_3.png, id=39, 433.62pt x 361.35pt>
 File: Images/Transferlearning_3.png Graphic file (type png)
 <use Images/Transferlearning_3.png>
-Package pdftex.def Info: Images/Transferlearning_3.png  used on input line 370.
+Package pdftex.def Info: Images/Transferlearning_3.png  used on input line 386.
 (pdftex.def)             Requested size: 252.0pt x 210.00218pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
-[]\OT1/ptm/m/n/10 This yields a sen-si-tiv-ity (re-call for COVID)
- []
-
-
-Underfull \hbox (badness 6592) in paragraph at lines 384--385
-\OT1/ptm/m/n/10 of $\OT1/cmr/m/n/10 83\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 (83 + 16) = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 8384$ \OT1/ptm/m/n/10 and a speci-ficity of
- []
-
-
-Underfull \hbox (badness 1661) in paragraph at lines 384--385
-\OT1/cmr/m/n/10 84\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 (84 + 17) = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 8317$\OT1/ptm/m/n/10 . The much higher sen-si-tiv-ity
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
-
- []
-
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 388--389
-
- []
-
-<Images/Transferlearning_4.png, id=40, 698.61pt x 385.44pt>
-File: Images/Transferlearning_4.png Graphic file (type png)
-<use Images/Transferlearning_4.png>
-Package pdftex.def Info: Images/Transferlearning_4.png  used on input line 391.
-(pdftex.def)             Requested size: 252.0pt x 139.03471pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 398--399
-
- []
-
-
-Underfull \hbox (badness 1360) in paragraph at lines 400--401
-[]\OT1/ptm/m/n/10 When ex-am-in-ing the train-ing curve of the pre-trained
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
+[]\OT1/ptm/m/n/10 This yields a sen-si-tiv-ity (re-call for COVID) of
  []
 
 
@@ -589,71 +580,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 400--401
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--404
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
+
+ []
+
+<Images/Transferlearning_4.png, id=40, 698.61pt x 385.44pt>
+File: Images/Transferlearning_4.png Graphic file (type png)
+<use Images/Transferlearning_4.png>
+Package pdftex.def Info: Images/Transferlearning_4.png  used on input line 407.
+(pdftex.def)             Requested size: 252.0pt x 139.03471pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--415
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--417
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 407--408
+Underfull \hbox (badness 10000) in paragraph at lines 418--420
 
  []
 
-<Images/gradcam.png, id=41, 462.528pt x 346.896pt>
-File: Images/gradcam.png Graphic file (type png)
-<use Images/gradcam.png>
-Package pdftex.def Info: Images/gradcam.png  used on input line 417.
-(pdftex.def)             Requested size: 252.0pt x 189.00427pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
+
+ []
+
 
 
 [5 <./Images/Transferlearning_2.png> <./Images/Transferlearning_3.png> <./Images/Transferlearning_4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
 
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 442.
+ []
+
+<Images/gradcam.png, id=47, 462.528pt x 346.896pt>
+File: Images/gradcam.png Graphic file (type png)
+<use Images/gradcam.png>
+Package pdftex.def Info: Images/gradcam.png  used on input line 433.
+(pdftex.def)             Requested size: 252.0pt x 189.00427pt.
+
+
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 458.
 (C:\Users\wille\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 
-c:/Users/wille/AI-project/report/Report_group25.tex:443: LaTeX Error: Unicode character   (U+202F)
+c:/Users/wille/AI-project/report/Report_group25.tex:459: LaTeX Error: Unicode character   (U+202F)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.443 ...e every float in the text (e.g., "Fig. 
+l.459 ...e every float in the text (e.g., "Fig. 
                                                   X" or "Table Y") and rel...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-c:/Users/wille/AI-project/report/Report_group25.tex:443: LaTeX Error: Unicode character   (U+202F)
+c:/Users/wille/AI-project/report/Report_group25.tex:459: LaTeX Error: Unicode character   (U+202F)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.443 ...n the text (e.g., "Fig. X" or "Table 
+l.459 ...n the text (e.g., "Fig. X" or "Table 
                                                   Y") and rely on the class�...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--444
+Underfull \hbox (badness 10000) in paragraph at lines 458--460
  \OT1/ptm/m/it/10 a) Po-si-tion-ing Fig-ures and Ta-bles: [][] \OT1/ptm/m/n/10 All fig-ures
  []
 
 
-Underfull \hbox (badness 4366) in paragraph at lines 442--444
+Underfull \hbox (badness 4366) in paragraph at lines 458--460
 \OT1/ptm/m/n/10 and ta-bles are in-serted us-ing the place-ment spec-i-fier
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--444
+Underfull \hbox (badness 10000) in paragraph at lines 458--460
 [][]\OT1/pcr/m/n/10 \includegraphics[width=\linewidth]{...}[]\OT1/ptm/m/n/10 ,
  []
 
@@ -693,7 +706,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  86i,11n,93p,975b,354s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/wille/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Report_group25.pdf (6 pages, 2156991 bytes).
+Output written on Report_group25.pdf (6 pages, 2157255 bytes).
 PDF statistics:
  99 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
