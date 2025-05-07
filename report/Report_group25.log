@@ -317,7 +317,8 @@ Package caption Info: New subtype `subtable' on input line 238.
 ) (C:\Users\Carlo\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count311
-) (Report_group25.aux)
+)
+No file Report_group25.aux.
 \openout1 = `Report_group25.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -334,7 +335,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
-
 -- Lines per column: 56 (exact).
 (C:\Users\Carlo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -367,23 +367,63 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 31.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
+LaTeX Warning: Citation `b1' on page 1 undefined on input line 34.
+
+
+LaTeX Warning: Citation `b2' on page 1 undefined on input line 34.
+
+
+LaTeX Warning: Reference `sec:task_1' on page 1 undefined on input line 36.
+
+
+LaTeX Warning: Reference `fig:example_images' on page 1 undefined on input line 36.
+
+
+LaTeX Warning: Reference `sec:task_2' on page 1 undefined on input line 36.
+
+
+LaTeX Warning: Reference `table:baseline_cnn_overview' on page 1 undefined on input line 36.
+
+
 LaTeX Warning: Reference `line_curves' on page 1 undefined on input line 36.
+
+
+LaTeX Warning: Reference `fig:conf_matrix' on page 1 undefined on input line 36.
+
+
+LaTeX Warning: Reference `sec:task_3' on page 1 undefined on input line 36.
+
+
+LaTeX Warning: Reference `sec:task_4' on page 1 undefined on input line 36.
+
+
+LaTeX Warning: Reference `sec:conclusions' on page 1 undefined on input line 36.
 
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 41.
 (C:\Users\Carlo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
+LaTeX Warning: Reference `fig:example_images' on page 1 undefined on input line 45.
+
+
+
 <Images/example_images.png, id=1, 526.96875pt x 357.13425pt>
 File: Images/example_images.png Graphic file (type png)
 <use Images/example_images.png>
 Package pdftex.def Info: Images/example_images.png  used on input line 48.
 (pdftex.def)             Requested size: 252.0pt x 170.78491pt.
+
+LaTeX Warning: Reference `fig:pixel_statistics' on page 1 undefined on input line 54.
+
 <Images/pixel_statistics.png, id=3, 714.7503pt x 389.5353pt>
 File: Images/pixel_statistics.png Graphic file (type png)
 <use Images/pixel_statistics.png>
 Package pdftex.def Info: Images/pixel_statistics.png  used on input line 57.
 (pdftex.def)             Requested size: 252.0pt x 137.33795pt.
+
+LaTeX Warning: Reference `fig:downsample' on page 1 undefined on input line 65.
+
 
 
 [1{C:/Users/Carlo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
@@ -395,6 +435,10 @@ File: Images/downsample.png Graphic file (type png)
 <use Images/downsample.png>
 Package pdftex.def Info: Images/downsample.png  used on input line 68.
 (pdftex.def)             Requested size: 252.0pt x 133.09676pt.
+
+
+LaTeX Warning: Reference `fig:augmentation' on page 2 undefined on input line 76.
+
 <Images/augmentation.png, id=13, 911.65594pt x 625.58719pt>
 File: Images/augmentation.png Graphic file (type png)
 <use Images/augmentation.png>
@@ -410,13 +454,26 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
 
 
+LaTeX Warning: Reference `table:baseline_cnn_overview' on page 2 undefined on input line 103.
+
+
+
 [2 <./Images/pixel_statistics.png> <./Images/downsample.png> <./Images/augmentation.png>]
+
+LaTeX Warning: Reference `fig:baseline_curves' on page 3 undefined on input line 137.
+
 <Images/baseline_curves.png, id=22, 1011.78pt x 578.16pt>
 File: Images/baseline_curves.png Graphic file (type png)
 <use Images/baseline_curves.png>
 Package pdftex.def Info: Images/baseline_curves.png  used on input line 140.
 (pdftex.def)             Requested size: 252.0pt x 144.0015pt.
 
+LaTeX Warning: Reference `table:hp_results' on page 3 undefined on input line 155.
+
+
+
+
+LaTeX Warning: Reference `fig:conf_matrix' on page 3 undefined on input line 198.
 
 <Images/confusion_matrix_baseline.png, id=23, 433.62pt x 361.35pt>
 File: Images/confusion_matrix_baseline.png Graphic file (type png)
@@ -424,19 +481,35 @@ File: Images/confusion_matrix_baseline.png Graphic file (type png)
 Package pdftex.def Info: Images/confusion_matrix_baseline.png  used on input line 201.
 (pdftex.def)             Requested size: 252.0pt x 210.00218pt.
 
+LaTeX Warning: Reference `fig:conf_matrix' on page 3 undefined on input line 207.
+
+
 
 [3 <./Images/baseline_curves.png> <./Images/confusion_matrix_baseline.png>]
+
+LaTeX Warning: Reference `fig:baseline_curves' on page 4 undefined on input line 221.
+
+
 Underfull \hbox (badness 1859) in paragraph at lines 225--226
 []\OT1/ptm/m/n/10 In this task trans-fer learn-ing by us-ing a pre-trained
  []
 
 
+LaTeX Warning: Reference `table:transfer_cnn_overview' on page 4 undefined on input line 240.
+
+
+
+
+LaTeX Warning: Reference `fig:transferlearning_1' on page 4 undefined on input line 272.
 
 <Images/Transferlearning_1.png, id=32, 1011.78pt x 578.16pt>
 File: Images/Transferlearning_1.png Graphic file (type png)
 <use Images/Transferlearning_1.png>
 Package pdftex.def Info: Images/Transferlearning_1.png  used on input line 275.
 (pdftex.def)             Requested size: 252.0pt x 144.0015pt.
+
+LaTeX Warning: Reference `fig:transferlearning_2' on page 4 undefined on input line 297.
+
 <Images/Transferlearning_2.png, id=33, 1011.78pt x 361.35pt>
 File: Images/Transferlearning_2.png Graphic file (type png)
 <use Images/Transferlearning_2.png>
@@ -445,21 +518,33 @@ Package pdftex.def Info: Images/Transferlearning_2.png  used on input line 300.
 
 
 [4 <./Images/Transferlearning_1.png>]
+
+LaTeX Warning: Reference `fig:transferlearning_3' on page 5 undefined on input line 318.
+
 <Images/Transferlearning_3.png, id=39, 433.62pt x 361.35pt>
 File: Images/Transferlearning_3.png Graphic file (type png)
 <use Images/Transferlearning_3.png>
 Package pdftex.def Info: Images/Transferlearning_3.png  used on input line 321.
 (pdftex.def)             Requested size: 252.0pt x 210.00218pt.
+
+LaTeX Warning: Reference `fig:transferlearning_4' on page 5 undefined on input line 326.
+
 <Images/Transferlearning_4.png, id=40, 698.61pt x 385.44pt>
 File: Images/Transferlearning_4.png Graphic file (type png)
 <use Images/Transferlearning_4.png>
 Package pdftex.def Info: Images/Transferlearning_4.png  used on input line 329.
 (pdftex.def)             Requested size: 252.0pt x 139.03471pt.
 
+LaTeX Warning: Reference `fig:transferlearning_3' on page 5 undefined on input line 335.
+
+
 
 
 
 [5 <./Images/Transferlearning_2.png> <./Images/Transferlearning_3.png> <./Images/Transferlearning_4.png>]
+
+LaTeX Warning: Reference `table:baseline_cnn_overview' on page 6 undefined on input line 361.
+
 
 LaTeX Warning: Reference `fig:gradcam' on page 6 undefined on input line 371.
 
@@ -490,6 +575,21 @@ File: Images/gradcam_false_neg.png Graphic file (type png)
 <use Images/gradcam_false_neg.png>
 Package pdftex.def Info: Images/gradcam_false_neg.png  used on input line 415.
 (pdftex.def)             Requested size: 55.4403pt x 41.57808pt.
+
+LaTeX Warning: Reference `fig:gradcam_groups' on page 6 undefined on input line 424.
+
+
+LaTeX Warning: Reference `sub@fig:true_neg' on page 6 undefined on input line 426.
+
+
+LaTeX Warning: Reference `sub@fig:true_pos' on page 6 undefined on input line 426.
+
+
+LaTeX Warning: Reference `sub@fig:false_pos' on page 6 undefined on input line 428.
+
+
+LaTeX Warning: Reference `sub@fig:false_neg' on page 6 undefined on input line 428.
+
 
 
 [6 <./Images/gradcam_test_image.png> <./Images/gradcam_true_neg.png> <./Images/gradcam_true_pos.png> <./Images/gradcam_false_pos.png> <./Images/gradcam_false_neg.png>]
@@ -573,17 +673,20 @@ L3 programming layer <2025-04-14>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 7219 strings out of 469941
- 124193 string characters out of 5469431
+ 7216 strings out of 469941
+ 124027 string characters out of 5469431
  528387 words of memory out of 5000000
- 33923 multiletter control sequences out of 15000+600000
+ 33922 multiletter control sequences out of 15000+600000
  669191 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,11n,131p,1043b,531s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Carlo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Report_group25.pdf (8 pages, 2562236 bytes).
+Output written on Report_group25.pdf (8 pages, 2562358 bytes).
 PDF statistics:
  115 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
